@@ -237,6 +237,11 @@ void fnd1_display(int value)
 
 ## 📚 알아야 할 개념
 
+### UART
+- 시리얼 통신 프로토콜. TX/RX 두 선으로 데이터 송수신
+- UART0: PC 디버깅, UART1: 블루투스(ZS-040)
+- 보드레이트 9600bps, 2배속 모드(U2X0)로 오차 최소화
+
 ### Timer / PWM
 - `Timer0` : 1ms 기준 타이머 (64분주, TCNT0=6으로 250 카운트 → 1ms)
 - `Timer1` : 8비트 Fast PWM → 모터 속도 제어 (OCR1A, OCR1B로 듀티비 조절)
@@ -249,7 +254,20 @@ void fnd1_display(int value)
 
 ### volatile
 인터럽트와 메인 루프가 **공유하는 변수**는 반드시 `volatile` 선언.  
-컴파일러가 최적화로 레지스터에 캐싱하는 것을 방지합니다.
+컴파일러가 최적화로 레지스터에 캐싱하는 것을 방지함
+
+### Polling vs Interrupt
+
+| | Polling | Interrupt |
+|--|---------|-----------|
+| 방식 | CPU가 계속 확인 | 이벤트 발생 시 CPU에 알림 |
+| CPU 점유 | 높음 | 낮음 |
+| 반응 속도 | 느릴 수 있음 | 빠름 |
+| 사용 예 | 버튼 입력 확인 | UART 수신, 초음파 에코 |
+
+> 본 프로젝트에서 UART 수신과 초음파는 **인터럽트**로,
+> 버튼은 메인 루프에서 **폴링**으로 처리했다.
+
 
 ```c
 volatile uint32_t msec_count = 0;
