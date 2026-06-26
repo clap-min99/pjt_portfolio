@@ -209,7 +209,7 @@ void fnd_display(int value)
 ### FSM (Finite State Machine)
 - 시스템을 **상태(State)** 와 **전이(Transition)** 로 표현하는 설계 기법
 - 복잡한 동작을 `switch-case`로 명확하게 구조화할 수 있음
-- 각 상태에서 **어떤 입력이 들어오면 어디로 가는지**만 정의하면 됨
+- 각 상태에서 **어떤 입력이 들어오면 어디로 가는지** 정의
 
 ### Timer0 — 1ms 기준 클럭 생성 원리
 ```
@@ -235,7 +235,7 @@ if (prev == BUTTON_PRESS && current == BUTTON_RELEASE)
 
 ### volatile
 인터럽트(ISR)와 메인 루프가 공유하는 변수에 필수.  
-컴파일러가 최적화로 레지스터에 캐싱하는 것을 방지합니다.
+컴파일러가 최적화로 레지스터에 캐싱하는 것을 방지
 
 ```c
 volatile uint32_t msec_count = 0;
