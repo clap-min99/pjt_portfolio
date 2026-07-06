@@ -8,7 +8,18 @@ LCD1602(4bit 모드)에 사칙연산 결과를 표시하고, 버튼으로 DS1307
 
 ## 📹 동작 영상
 
+1. 계산기
+
 ![cal_lcd](./assets/cal_lcd.gif)
+
+- 괄호 누락시
+
+![cal_brac](./assets/cal_brac.gif)
+
+
+2. 시계
+
+![cal_brac](./assets/cal_brac.gif)
 
 ---
 
@@ -23,6 +34,12 @@ LCD1602(4bit 모드)에 사칙연산 결과를 표시하고, 버튼으로 DS1307
 | RTC | DS1307 (I2C, SDA/SCL 2선) |
 | 표시 | LCD1602 (4bit 모드, 2행×16열) |
 | 입력 | 4×4 키패드, 스위치 × 5 (BUTTON0~4) |
+
+---
+
+### 외관사진
+
+![image](./assets/IMG_7894.jpg)
 
 ---
 ### 회로도
@@ -76,12 +93,12 @@ PD7 → BUTTON4 : CAL MODE ↔ CLOCK MODE 전환
 
 ```
 LCD_CAL_RTC/
-├── main.c        — 메인 루프, 모드 전환, 초기화
+├── main.c         — 메인 루프, 모드 전환, 초기화
 ├── lcd.c/h        — LCD1602 4bit 드라이버
 ├── cal.c/h        — 계산기 로직 (중위표기법 계산, 괄호검사, 에러처리)
 ├── keypad.c/h     — 4×4 키패드 스캔
 ├── button.c/h     — 스위치 입력 처리 (디바운싱)
-├── queue.c/h       — 원형 큐 (인터럽트-메인루프 분리)
+├── queue.c/h      — 원형 큐 (인터럽트-메인루프 분리)
 ├── i2c.c/h        — I2C(TWI) 하드웨어 통신 드라이버
 ├── ds1307.c/h     — DS1307 RTC 레지스터 read/write
 └── uart0.c/h      — PC 디버깅용 UART (printf 리다이렉트)
@@ -255,7 +272,7 @@ uint8_t read_ds1307(uint8_t addr, uint8_t* rx_buff)
 
 ### 버튼 폴링
 - 디바운스 로직은 **매 루프마다 지속적으로 폴링**되어야 정상 동작
-- 조건문 안에 갇혀서 가끔만 호출되면 버튼 입력을 놓칠 수 있음
+
 
 ---
 
@@ -263,4 +280,4 @@ uint8_t read_ds1307(uint8_t addr, uint8_t* rx_buff)
 
 - LCD 데이터시트상 4bit 인터페이스 전환 단계는 니블 1회 전송이 원칙 (2회로 나눠 보내면 컨트롤러가 8bit 모드에 갇혀 화면 전체가 깨짐)
 - VO(명암) 핀을 가변저항으로 VCC-GND 전압분배해서 연결해야 함 — 미연결 시 흰 화면만 표시됨
-- 부저(수동, Timer3/OC3A 하드웨어 PWM)는 소리 자체는 정상 출력됐으나 구동 중 LCD 화면 이상 현상이 발생해 최종 구현에서는 제외
+- 부저(수동, Timer3/OC3A 하드웨어 PWM)는 소리 자체는 정상 출력됐으나 구동 중 LCD 화면 이상 현상이 발생함.

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "LCD_CAL", "LCD_CAL.cproj", "{D99BC99C-D947-4B21-812C-6389CFFBE4AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D99BC99C-D947-4B21-812C-6389CFFBE4AD}.Debug|AVR.ActiveCfg = Debug|AVR
+		{D99BC99C-D947-4B21-812C-6389CFFBE4AD}.Debug|AVR.Build.0 = Debug|AVR
+		{D99BC99C-D947-4B21-812C-6389CFFBE4AD}.Release|AVR.ActiveCfg = Release|AVR
+		{D99BC99C-D947-4B21-812C-6389CFFBE4AD}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
