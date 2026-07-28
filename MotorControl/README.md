@@ -100,7 +100,7 @@ UART로 `'1'`~`'9'` 수신 시 현재 상태 유지한 채 기어(속도)만 변
 
 ### 1. 버튼 클릭 판별 (operation.c)
 
-EXTI(falling/rising edge) 인터럽트로 `Key_Pressed`를 1(press) / 2(release)로 세트하고, `Key_Handler()`가 메인 루프에서 시간 차로 클릭 종류를 판별합니다.
+EXTI(falling/rising edge) 인터럽트로 `Key_Pressed`를 1(press) / 2(release)로 세트하고, `Key_Handler()`가 메인 루프에서 시간 차로 클릭 종류를 판별함
 
 ```c
 void Key_Handler(unsigned int time_cnt)
@@ -262,7 +262,7 @@ USART2->DR = data;                               // 데이터 전송
 
 ### 버튼 클릭 이벤트 분류
 
-EXTI가 falling/rising edge 둘 다 감지해서 누름/뗌을 구분하고, `time_cnt` 차이로 클릭 종류를 판별합니다.
+EXTI가 falling/rising edge 둘 다 감지해서 누름/뗌을 구분하고, `time_cnt` 차이로 클릭 종류를 판별
 
 ```
 falling edge (Key_Pressed=1) → press_time 기록
@@ -288,7 +288,7 @@ volatile unsigned int Key_Pressed = 0;
 
 ## 상위설계서
 
-[./상위설계서/README.md](./상위설계서/README.md)
+[상위설계서](./상위설계서/README.md)
 
 ---
 
