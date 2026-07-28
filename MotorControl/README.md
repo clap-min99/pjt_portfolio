@@ -1,12 +1,11 @@
 # MotorControl — DC 모터 제어
 
-STM32F411xE 기반 DC 모터 제어 프로젝트. 버튼 클릭 방식(단클릭/더블클릭/롱클릭)으로 모터 방향과 상태를 제어하고, UART로 속도(기어)를 변경
+STM32F411xE 기반 DC 모터 제어 프로젝트. 버튼 클릭 방식(단클릭/더블클릭/롱클릭)으로 모터 방향과 상태를 제어하고, UART로 속도(기어) 변경
 
 ---
-
 ## 동작 영상
 
--
+![motor](./assets/motor.gif)
 
 ---
 
@@ -18,7 +17,7 @@ STM32F411xE 기반 DC 모터 제어 프로젝트. 버튼 클릭 방식(단클릭
 | 언어 | C (ARM-GCC) |
 | IDE | VSCode |
 | 빌드 | Makefile + arm-gcc (make / make run) |
-| 레지스터 접근 | CMSIS (HAL 없이 직접 접근) |
+| 레지스터 접근 | CMSIS  |
 | 통신 | UART2 (속도 제어) |
 | 구동 | DC 모터 + L293D 드라이버 + PWM (TIMER5, PA0/PA1) |
 | 전원 | CP2102 USB-UART 모듈 (모터 전원 공급) |
@@ -153,7 +152,9 @@ void Key_Handler(unsigned int time_cnt)
 
 ### 2. PWM 속도 제어 (motor.c + timer.c)
 
-기어 1~9단에 따라 듀티비가 결정됩니다. 방향 전환 시 역기전력 방지를 위해 500ms 정지 후 PWM을 걸어요.
+기어 1~9단에 따라 듀티비 결정 
+
+방향 전환 시 역기전력 방지를 위해 500ms 정지 후 PWM
 
 ```c
 #define PWM_DEFAULT 60
