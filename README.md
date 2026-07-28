@@ -31,7 +31,7 @@ ATmega128A 기반 임베디드 프로젝트
 ### STM32F411xE
 
 #### MotorControl
-STM32F411xE 기반 모터 제어 프로젝트.  
+STM32F411xE 기반 모터 제어
 
 ---
 
