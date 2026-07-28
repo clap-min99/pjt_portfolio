@@ -20,9 +20,10 @@ STM32F411xE 기반 DC 모터 제어 프로젝트. 버튼 클릭 방식(단클릭
 | 빌드 | Makefile + arm-gcc (make / make run) |
 | 레지스터 접근 | CMSIS (HAL 없이 직접 접근) |
 | 통신 | UART2 (속도 제어) |
-| 구동 | DC 모터 + PWM (TIMER5) |
+| 구동 | DC 모터 + L293D 드라이버 + PWM (TIMER5, PA0/PA1) |
+| 전원 | CP2102 USB-UART 모듈 (모터 전원 공급) |
 | 입력 | 버튼 (C13) |
-| 표시 | LED (A5) |
+| 표시 | LED LD2 (PA5) |
 
 ---
 
@@ -294,6 +295,6 @@ volatile unsigned int Key_Pressed = 0;
 
 - 레지스터 직접 접근 (`GPIOA->ODR`, `TIM5->CCR1`, `USART2->DR` 등)
 - 방향 전환 시 `Motor_Stop() + TIM3_Delay(500)` 으로 역기전력 방지
-- `device_driver.h` 하나에 전역변수 extern과 함수 프로토타입을 모아 모든 .c 파일이 이 헤더 하나만 include
+- 모터 전원 : CP2102 USB-UART 모듈로 공급
 - TIMER5 CCR 채널 두 개로 H-브리지 방향 제어 — 별도 모터 드라이버 IC 없음
 - 기어 1단(duty 55%) ~ 9단(duty 95%) 범위로 저속에서도 모터가 안정적으로 회전하도록 오프셋 50% 적용
