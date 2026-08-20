@@ -8,10 +8,11 @@ ATmega128A 기반 임베디드 프로젝트
 
 | 프로젝트 | 설명 | 핵심 기술 |
 |----------|------|-----------|
+| [GasMonitoring](./GasMonitoring/README.md) | 가스 누출 실시간 감지 및 원격 안전 차단 시스템 (Edge–Gateway–Mobile 3계층) | Bare-metal FW, UART/TCP
 | [AutoCar](./AutoCar/README.md) | 블루투스 수동조종 + 자율주행 RC카 | FSM, UART, 초음파, PWM, FND |
 | [WasherFSM](./WasherFSM/README.md) | 버튼으로 세탁/헹굼/탈수 시간 설정하는 세탁기 시뮬레이터 | FSM, FND, PWM, Timer |
 | [LCD_CAL](./LCD_CAL_RTC/README.md) | LCD화면에 계산기, 시계 출력하기 | LCD1602, DS1307 RTC,  I2C |
-| [MotorControl](./MotorControl/README.md) | STM32F411xE | 모터 제어 |  |
+| [MotorControl](./MotorControl/README.md) | STM32F411xE 기반 DC 모터 방향/속도 제어 | 레지스터 제어, PWM, UART, EXTI |
 
 
 ---
@@ -27,11 +28,17 @@ ATmega128A 기반 임베디드 프로젝트
 
 ## 📌 프로젝트 소개
 
+#### SmartMonitoring
+밀폐 공간의 가스 누출을 실시간으로 감지하고, 위험 시 밸브 차단·환기팬 구동·경보를 자율/원격으로 동시 수행하는 3계층 안전 관제 시스템.
+STM32F411RE 베어메탈 엣지 노드(레지스터 직접 제어, PWM 서보 밸브 구동)가 UART로 Qt 데스크톱 게이트웨이와 통신하고, 게이트웨이는 다시 TCP로 Android 클라이언트와 연동해 CCTV 스트리밍 및 Tailscale VPN 기반 원격 제어를 지원.
+
+---
 
 ### STM32F411xE
 
 #### MotorControl
-STM32F411xE 기반 모터 제어
+버튼 클릭 패턴(단클릭/더블클릭/롱클릭)으로 DC 모터의 정회전·역회전·정지를 제어하고, UART로 수신한 값에 따라 속도(기어)를 실시간 변경하는 프로젝트.
+HAL 없이 레지스터 직접 접근으로 PWM(TIM5)과 EXTI 인터럽트를 구현
 
 ---
 

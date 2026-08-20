@@ -1,0 +1,80 @@
+# ==========================================
+# 0. OS & IDE 공통 (전체 공통 적용)
+# ==========================================
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+.vscode/
+.idea/
+
+# ==========================================
+# 1. Android 프로젝트 (/android)
+# ==========================================
+android/.gradle/
+android/build/
+android/**/build/
+android/local.properties
+android/.cxx/
+android/.externalNativeBuild/
+android/captures/
+
+# 앱 빌드 결과물 & 보안 키
+android/**/*.apk
+android/**/*.aab
+android/**/*.keystore
+android/**/*.jks
+
+# ==========================================
+# 2. Qt C++ 서버 프로젝트 (/qt-server)
+# ==========================================
+# Qt 빌드 출력 폴더 및 설정 파일
+qt-server/build/
+qt-server/build-*/
+qt-server/*.pro.user*
+qt-server/*.pro.shared*
+
+# Qt MOC/UI 자동 생성 파일
+qt-server/ui_*.h
+qt-server/moc_*.cpp
+qt-server/moc_*.h
+qt-server/qrc_*.cpp
+
+# C++ 컴파일 결과물
+qt-server/*.o
+qt-server/*.obj
+qt-server/*.a
+qt-server/*.lib
+qt-server/*.so
+qt-server/*.dll
+qt-server/*.exe
+
+# CMake 사용 시
+qt-server/CMakeCache.txt
+qt-server/CMakeFiles/
+qt-server/cmake_install.cmake
+qt-server/Makefile*
+
+# ==========================================
+# 3. STM32 펌웨어 프로젝트 (/stm32-firmware)
+# ==========================================
+# STM32CubeIDE / Keil 빌드 폴더
+stm32-firmware/**/Debug/
+stm32-firmware/**/Release/
+
+# 펌웨어 바이너리 & 맵 파일
+stm32-firmware/**/*.elf
+stm32-firmware/**/*.hex
+stm32-firmware/**/*.bin
+stm32-firmware/**/*.map
+stm32-firmware/**/*.lst
+stm32-firmware/**/*.o
+stm32-firmware/**/*.d
+stm32-firmware/**/*.su
+
+# IDE 설정 파일
+stm32-firmware/.settings/
+stm32-firmware/*.launch
+
+# Local Dump & Temporary text files
+__dump*.txt

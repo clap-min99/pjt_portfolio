@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>720</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>680</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Smart Monitoring Shield - Control Center</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 메인 배경 및 기본 폰트 설정 */
+QMainWindow {
+    background-color: #F5F5F7;
+    font-family: &quot;Malgun Gothic&quot;, &quot;Segoe UI&quot;, sans-serif;
+}
+
+/* 그룹박스 헤더 및 테두리 스타일링 */
+QGroupBox {
+    font-weight: bold;
+    font-size: 10pt;
+    color: #1D1D1F;
+    border: 1px solid #D2D2D7;
+    border-radius: 8px;
+    margin-top: 10px;
+    background-color: #FFFFFF;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 8px;
+    left: 10px;
+}
+
+/* 입력 필드 공통 스타일 */
+QLineEdit, QComboBox, QSpinBox {
+    border: 1px solid #C7C7CC;
+    border-radius: 4px;
+    padding: 2px 5px;
+    background-color: #FAFAFC;
+    color: #1D1D1F;
+}
+
+QLineEdit:focus, QComboBox:focus, QSpinBox:focus {
+    border: 1px solid #007AFF;
+    background-color: #FFFFFF;
+}
+
+/* 버튼 일반 기본 스타일 */
+QPushButton {
+    background-color: #E5E5EA;
+    border: none;
+    border-radius: 4px;
+    color: #1D1D1F;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #D1D1D6;
+}
+
+QPushButton:pressed {
+    background-color: #C7C7CC;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="4,3,2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,0">
+        <item>
+         <widget class="QGroupBox" name="gbCctv">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>현장 실시간 영상 (CCTV)</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="lblCameraPreview">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: #000000;
+border-radius: 6px;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="scaledContents">
+              <bool>false</bool>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="gbControl">
+          <property name="maximumSize">
+           <size>
+            <width>380</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>시스템 통신 및 센서 제어</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <property name="spacing">
+            <number>8</number>
+           </property>
+           <property name="leftMargin">
+            <number>10</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>10</number>
+           </property>
+           <property name="bottomMargin">
+            <number>10</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0,0">
+             <item>
+              <widget class="QLabel" name="lblTcpServer">
+               <property name="styleSheet">
+                <string notr="true">color: #0055FF; font-weight: bold;</string>
+               </property>
+               <property name="text">
+                <string>TCP 서버</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblServerIp">
+               <property name="styleSheet">
+                <string notr="true">color: #666666; font-size: 8.5pt;</string>
+               </property>
+               <property name="text">
+                <string>IP: 000.000.000.0</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lePort">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>72</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">max-width: 60px; height: 26px; AlignCenter</string>
+               </property>
+               <property name="text">
+                <string>8080</string>
+               </property>
+               <property name="placeholderText">
+                <string>포트 번호</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnStartServer">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>90</width>
+                 <height>26</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>서버 시작</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,1">
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="styleSheet">
+                <string notr="true">color: #555555; font-size: 8.5pt;</string>
+               </property>
+               <property name="text">
+                <string>접속 상태: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblClientCount">
+               <property name="styleSheet">
+                <string notr="true">color: #555555; font-size: 8.5pt;</string>
+               </property>
+               <property name="text">
+                <string>클라이언트 0 명 접속 중</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line">
+             <property name="styleSheet">
+              <string notr="true">color: #E0E0E0;</string>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="0,1,0,1">
+             <item>
+              <widget class="QLabel" name="lblSerialPort">
+               <property name="styleSheet">
+                <string notr="true">color: #00AA00; font-weight: bold;</string>
+               </property>
+               <property name="text">
+                <string>시리얼 포트</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbPortList">
+               <property name="styleSheet">
+                <string notr="true">height: 26px;</string>
+               </property>
+               <property name="currentText">
+                <string>COM4</string>
+               </property>
+               <property name="currentIndex">
+                <number>3</number>
+               </property>
+               <item>
+                <property name="text">
+                 <string>COM1</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>COM2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>COM3</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>COM4</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>COM5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>COM6</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>COM7</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>COM8</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>COM9</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>COM10</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_5">
+               <property name="styleSheet">
+                <string notr="true">color: #00AA00; font-weight: bold;</string>
+               </property>
+               <property name="text">
+                <string>속도</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbBaudRate">
+               <property name="styleSheet">
+                <string notr="true">height: 26px;</string>
+               </property>
+               <property name="currentIndex">
+                <number>1</number>
+               </property>
+               <item>
+                <property name="text">
+                 <string>9600</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>115200</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>연결 제어: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnSerialConnect">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>90</width>
+                 <height>26</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>시리얼 연결</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line_2">
+             <property name="styleSheet">
+              <string notr="true">color: #E0E0E0;</string>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1,0,1">
+             <item>
+              <widget class="QLabel" name="lblGas">
+               <property name="text">
+                <string>현재 가스 수치: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblGasVal">
+               <property name="maximumSize">
+                <size>
+                 <width>16777199</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: #FF2D55; font-size: 14pt; font-weight: bold; AlignRight</string>
+               </property>
+               <property name="text">
+                <string>0</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblStatus">
+               <property name="text">
+                <string>상태: </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblStatusBadge">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>26</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: #34C759; color: white; font-weight: bold; border-radius: 4px; fixedHeight: 26px; AlignCenter</string>
+               </property>
+               <property name="text">
+                <string>정상</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignmentFlag::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0,0,0">
+               <item>
+                <widget class="QLabel" name="lblThreshold">
+                 <property name="text">
+                  <string>임계값: </string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="sbThreshold">
+                 <property name="styleSheet">
+                  <string notr="true">height: 26px;</string>
+                 </property>
+                 <property name="maximum">
+                  <number>4095</number>
+                 </property>
+                 <property name="singleStep">
+                  <number>50</number>
+                 </property>
+                 <property name="value">
+                  <number>3000</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btnApplyThreshold">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>90</width>
+                   <height>26</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>적용</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="chkAutoClose">
+               <property name="text">
+                <string>임계값 초과 시 밸브 자동 차단</string>
+               </property>
+               <property name="checked">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="0,1,0,0">
+               <item>
+                <widget class="QCheckBox" name="chkEnableLogging">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;가스 수치 데이터를 CSV 파일로 자동 저장합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="text">
+                  <string>CSV 저장</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="leLogPath">
+                 <property name="focusPolicy">
+                  <enum>Qt::FocusPolicy::NoFocus</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: #F2F2F7;
+color: #333333;
+border: 1px solid #C7C7CC;
+border-radius: 4px;
+padding: 2px 6px;</string>
+                 </property>
+                 <property name="text">
+                  <string>./logs</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btnSelectPath">
+                 <property name="minimumSize">
+                  <size>
+                   <width>75</width>
+                   <height>26</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>경로 선택</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btnOpenFolder">
+                 <property name="minimumSize">
+                  <size>
+                   <width>75</width>
+                   <height>26</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>폴더 열기</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Line" name="line_3">
+             <property name="styleSheet">
+              <string notr="true">color: #E0E0E0;</string>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QPushButton" name="btnValveClose">
+               <property name="styleSheet">
+                <string notr="true">background-color: #FF3B30; color: white; height: 32px; border-radius: 4px; font-weight: bold;</string>
+               </property>
+               <property name="text">
+                <string>밸브 차단</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnValveOpen">
+               <property name="styleSheet">
+                <string notr="true">background-color: #007AFF; color: white; height: 32px; border-radius: 4px; font-weight: bold;</string>
+               </property>
+               <property name="text">
+                <string>밸브 복구</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="gbChart">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="title">
+         <string>실시간 가스 수치 추이 차트</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QChartView" name="chartView" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="gbLog">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="title">
+         <string>로그 출력</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QTextEdit" name="teLog">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #1E1E1E;
+color: #00FF66;
+font-family: 'Consolas', 'Cascadia Code', 'Courier New', monospace;
+font-size: 9.5pt;
+border-radius: 6px;
+padding: 8px;</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string>서버를 시작하면 클라이언트 접속 및 통신 로그가 여기에 표시됩니다...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>720</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QWidget</extends>
+   <header location="global">QChartView</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
