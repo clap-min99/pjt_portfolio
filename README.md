@@ -8,7 +8,7 @@ ATmega128A 기반 임베디드 프로젝트
 
 | 프로젝트 | 설명 | 핵심 기술 |
 |----------|------|-----------|
-| [GasMonitoring](./GasMonitoring/README.md) | 가스 누출 실시간 감지 및 원격 안전 차단 시스템 (Edge–Gateway–Mobile 3계층) | Bare-metal FW, UART/TCP
+| [GasMonitoring](./GasMonitoring/README.md) | 가스 누출 실시간 감지 및 원격 안전 차단 시스템 | Bare-metal FW, UART/TCP
 | [AutoCar](./AutoCar/README.md) | 블루투스 수동조종 + 자율주행 RC카 | FSM, UART, 초음파, PWM, FND |
 | [WasherFSM](./WasherFSM/README.md) | 버튼으로 세탁/헹굼/탈수 시간 설정하는 세탁기 시뮬레이터 | FSM, FND, PWM, Timer |
 | [LCD_CAL](./LCD_CAL_RTC/README.md) | LCD화면에 계산기, 시계 출력하기 | LCD1602, DS1307 RTC,  I2C |
