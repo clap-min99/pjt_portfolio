@@ -1,8 +1,6 @@
 #ifndef LED_H
 #define LED_H
 
-#include "device_driver.h"
-
 /**
  * @brief LED GPIO 초기화 (PB0: 상단, PB1: 하단, Push-Pull)
  */

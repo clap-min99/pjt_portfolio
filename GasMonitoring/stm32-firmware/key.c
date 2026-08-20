@@ -1,13 +1,13 @@
+#include "device_driver.h"
 #include "key.h"
-#include "macro.h"
 
 // 핀 번호 정의 (PB4: 밸브 차단, PB5: 밸브 복구)
 #define PIN_VALVE_CLOSE 4
 #define PIN_VALVE_OPEN 5
 
 // 이전 스위치 입력 상태 (내부 풀업 기본값 HIGH = 1)
-static uint8_t g_prev_close_key = 1;
-static uint8_t g_prev_open_key = 1;
+static unsigned char g_prev_close_key = 1;
+static unsigned char g_prev_open_key = 1;
 
 void Key_Init(void)
 {
@@ -28,8 +28,8 @@ KeyEvent Key_Scan(void)
 	KeyEvent event = KEY_EVENT_NONE;
 
 	// 현재 핀 입력 상태 읽기 (Active-Low: 누름 = 0, 뗌 = 1)
-	uint8_t curr_close_key = (GPIOB->IDR & (1U << PIN_VALVE_CLOSE)) ? 1 : 0;
-	uint8_t curr_open_key = (GPIOB->IDR & (1U << PIN_VALVE_OPEN)) ? 1 : 0;
+	unsigned char curr_close_key = (GPIOB->IDR & (1U << PIN_VALVE_CLOSE)) ? 1 : 0;
+	unsigned char curr_open_key = (GPIOB->IDR & (1U << PIN_VALVE_OPEN)) ? 1 : 0;
 
 	// 밸브 차단 버튼(PB4) Falling Edge 검출 (1 -> 0)
 	if (g_prev_close_key == 1 && curr_close_key == 0)

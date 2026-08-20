@@ -1,6 +1,5 @@
 #include "device_driver.h"
 #include "timer.h"
-#include "macro.h"
 
 volatile unsigned long g_sys_tick = 0;
 

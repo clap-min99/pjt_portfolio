@@ -1,9 +1,6 @@
 #ifndef KEY_H
 #define KEY_H
 
-#include "stm32f4xx.h"
-#include <stdint.h>
-
 // 스위치 입력 이벤트 정의
 typedef enum
 {

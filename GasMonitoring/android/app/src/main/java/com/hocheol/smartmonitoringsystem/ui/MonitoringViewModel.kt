@@ -19,7 +19,7 @@ class MonitoringViewModel : ViewModel() {
 
     private val socketClient = TcpSocketClient(viewModelScope)
 
-    private val _ip = MutableStateFlow("100.72.78.11")
+    private val _ip = MutableStateFlow("192.168.137.1")
     val ip = _ip.asStateFlow()
 
     private val _port = MutableStateFlow("8080")
@@ -104,8 +104,8 @@ class MonitoringViewModel : ViewModel() {
             socketClient.disconnect()
         } else {
             val portInt = _port.value.toIntOrNull() ?: 8080
-            socketClient.connect(_ip.value, portInt)
             addLog("서버 연결 시도 중...")
+            socketClient.connect(_ip.value, portInt)
         }
     }
 
@@ -156,7 +156,6 @@ class MonitoringViewModel : ViewModel() {
     }
 
     override fun onCleared() {
-        super.onCleared()
         socketClient.disconnect()
     }
 }

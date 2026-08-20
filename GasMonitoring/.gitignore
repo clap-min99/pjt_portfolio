@@ -31,6 +31,7 @@ android/**/*.jks
 # Qt 빌드 출력 폴더 및 설정 파일
 qt-server/build/
 qt-server/build-*/
+qt-server/.qtcreator/
 qt-server/*.pro.user*
 qt-server/*.pro.shared*
 

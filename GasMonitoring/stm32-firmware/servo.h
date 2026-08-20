@@ -1,8 +1,6 @@
 #ifndef SERVO_H
 #define SERVO_H
 
-#include "device_driver.h"
-
 // 밸브 각도 정의 (0도: 개방, 90도: 차단)
 #define SERVO_VALVE_OPEN_ANGLE 0
 #define SERVO_VALVE_CLOSE_ANGLE 90

@@ -352,7 +352,7 @@ __start:
 	.extern __ZI_BASE__
 	.extern __ZI_LIMIT__
 
-	@ 1) Flash에 저장된 .data 섹션을 SRAM으로 복사
+	@ 1 Flash에 저장된 .data 섹션을 SRAM으로 복사
 	LDR		r0, =__RO_LIMIT__
 	LDR		r1, =__RW_BASE__
 	LDR		r3, =__ZI_BASE__
@@ -368,7 +368,7 @@ __start:
 	BLO		1b
 
 2:
-	@ 2) .bss (Zero Initialized) 영역을 0으로 초기화
+	@ 2 .bss (Zero Initialized) 영역을 0으로 초기화
 	LDR		r1, =__ZI_LIMIT__
 	MOV		r2, #0x0
 3:

@@ -1,3 +1,4 @@
+#include "device_driver.h"
 #include "motor.h"
 
 void Motor_Init(void)

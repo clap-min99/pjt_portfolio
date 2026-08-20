@@ -1,6 +1,6 @@
+#include "device_driver.h"
 #include "servo.h"
 #include "timer.h"
-#include "macro.h"
 
 static unsigned char g_servo_current_angle = 0;
 

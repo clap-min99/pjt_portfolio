@@ -17,7 +17,7 @@ import java.net.InetSocketAddress
 import java.net.Socket
 
 /**
- * Qt GUI 서버와의 비동기 소켓 통신(명령 송수신 및 영상 바이너리 스트리밍)을 담당하는 네트워크 엔진
+ * Qt GUI 서버와의 비동기 소켓 통신을 담당하는 네트워크 엔진
  */
 class TcpSocketClient(
     private val scope: CoroutineScope
@@ -28,7 +28,6 @@ class TcpSocketClient(
     private var outputStream: OutputStream? = null
     private var receiveJob: Job? = null
 
-    // 송신 스레드 안전성 보장을 위한 동기화 락
     private val sendMutex = Mutex()
 
     private val _events = MutableSharedFlow<SocketEvent>(extraBufferCapacity = 64)
@@ -41,9 +40,6 @@ class TcpSocketClient(
         data class Error(val message: String) : SocketEvent()
     }
 
-    /**
-     * 지정된 IP와 포트로 TCP 소켓 비동기 연결 시도 (타임아웃 5초)
-     */
     fun connect(ip: String, port: Int) {
         scope.launch(Dispatchers.IO) {
             try {
@@ -51,6 +47,8 @@ class TcpSocketClient(
 
                 val newSocket = Socket()
                 newSocket.connect(InetSocketAddress(ip, port), 5000)
+                // 소켓 타임아웃 설정 (비정상 종료 감지 도움)
+                newSocket.soTimeout = 10000
 
                 val outStream = newSocket.getOutputStream()
                 val inStream = newSocket.getInputStream()
@@ -64,71 +62,66 @@ class TcpSocketClient(
                 startReceiveLoop()
             } catch (e: Exception) {
                 _events.emit(SocketEvent.Error(e.message ?: "서버 연결에 실패했습니다."))
-                disconnectInternal()
+                handleDisconnect()
             }
         }
     }
 
-    // 서버 메시지 실시간 수신 루프
     private fun startReceiveLoop() {
         receiveJob = scope.launch(Dispatchers.IO) {
             try {
-                while (isActive && socket?.isConnected == true) {
+                while (isActive && isSocketActive()) {
                     val receivedMessage = reader?.readLine()
                     if (receivedMessage != null) {
                         _events.emit(SocketEvent.MessageReceived(receivedMessage))
                     } else {
-                        _events.emit(SocketEvent.Disconnected("서버에 의해 연결이 종료되었습니다."))
-                        disconnectInternal()
+                        handleDisconnect("서버에서 연결을 종료했습니다.")
                         break
                     }
                 }
             } catch (e: Exception) {
                 if (isActive) {
-                    _events.emit(SocketEvent.Error("수신 오류: ${e.message}"))
-                    disconnectInternal()
+                    handleDisconnect("수신 오류: ${e.message}")
                 }
             }
         }
     }
 
-    /**
-     * 텍스트 기반 제어 명령 전송 ('1': 차단, '0': 복구)
-     */
     fun sendText(text: String) {
         scope.launch(Dispatchers.IO) {
             sendMutex.withLock {
                 try {
-                    writer?.println(text)
+                    val w = writer ?: throw Exception("연결되지 않음")
+                    w.println(text)
+                    if (w.checkError()) throw Exception("스트림 쓰기 오류")
                 } catch (e: Exception) {
-                    _events.emit(SocketEvent.Error("명령 전송 실패: ${e.message}"))
+                    handleDisconnect("명령 전송 중 연결 유실")
                 }
             }
         }
     }
 
-    /**
-     * 4바이트 Big-Endian 페이로드 헤더를 포함한 비디오 프레임 바이너리 스트리밍
-     */
     fun sendRaw(data: ByteArray) {
         scope.launch(Dispatchers.IO) {
             sendMutex.withLock {
                 try {
-                    outputStream?.let { os ->
-                        val size = data.size
-                        os.write(
-                            byteArrayOf(
-                                (size ushr 24).toByte(),
-                                (size ushr 16).toByte(),
-                                (size ushr 8).toByte(),
-                                size.toByte()
-                            )
+                    val os = outputStream ?: throw Exception("연결되지 않음")
+                    val size = data.size
+                    os.write(
+                        byteArrayOf(
+                            (size ushr 24).toByte(),
+                            (size ushr 16).toByte(),
+                            (size ushr 8).toByte(),
+                            size.toByte()
                         )
-                        os.write(data)
-                        os.flush()
+                    )
+                    os.write(data)
+                    os.flush()
+                } catch (e: Exception) {
+                    // 데이터 전송 실패는 소켓이 닫혔을 가능성이 큼
+                    if (!isSocketActive()) {
+                        handleDisconnect("데이터 전송 중 연결 유실")
                     }
-                } catch (_: Exception) {
-                    // 고빈도 스트리밍 패킷 에러는 채널 혼잡 방지를 위해 로깅 생략
                 }
             }
         }
@@ -136,8 +129,19 @@ class TcpSocketClient(
 
     fun disconnect() {
         scope.launch(Dispatchers.IO) {
+            handleDisconnect("사용자가 연결을 종료했습니다.")
+        }
+    }
+
+    private fun isSocketActive(): Boolean {
+        val s = socket
+        return s != null && s.isConnected && !s.isClosed
+    }
+
+    private suspend fun handleDisconnect(message: String? = null) {
+        if (socket != null || receiveJob != null) {
             disconnectInternal()
-            _events.emit(SocketEvent.Disconnected("연결이 종료되었습니다."))
+            _events.emit(SocketEvent.Disconnected(message))
         }
     }
 

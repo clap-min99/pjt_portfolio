@@ -1,5 +1,5 @@
+#include "device_driver.h"
 #include "led.h"
-#include "macro.h"
 
 void LED_Init(void)
 {
@@ -33,8 +33,14 @@ void LED_Off(void)
 
 void LED_Display(int on)
 {
-	// PB0, PB1 비트 블록 동시 제어 (1: 11b 점등, 0: 00b 소등)
-	Macro_Write_Block(GPIOB->ODR, 0x3, on ? 0x3 : 0x0, 0);
+	if (on)
+	{
+		LED_On();
+	}
+	else
+	{
+		LED_Off();
+	}
 }
 
 void LED_Top(int on)

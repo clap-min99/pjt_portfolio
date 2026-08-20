@@ -1,8 +1,6 @@
 #ifndef MOTOR_H
 #define MOTOR_H
 
-#include "device_driver.h"
-
 /**
  * @brief L298N 모터 드라이버 제어용 GPIO 초기화 (PC0: IN1, PC1: IN2)
  */
