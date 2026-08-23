@@ -1,6 +1,6 @@
 # 🗂️ Embedded Systems Portfolio
 
-ATmega128A 기반 임베디드 프로젝트 
+MCU 임베디드 프로젝트 
 
 ---
 
@@ -19,9 +19,9 @@ ATmega128A 기반 임베디드 프로젝트
 
 ## 개발 환경
 
-- **MCU** : ATmega128A
-- **IDE** : Atmel Studio 7
-- **언어** : C (AVR-GCC)
+- **MCU** : ATmega128A, STM32
+- **IDE** : Atmel Studio 7, VSCode
+- **언어** : C (AVR-GCC), C++, python
 - **통신** : UART (PC 디버깅 / 블루투스)
 
 ---
