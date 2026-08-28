@@ -13,7 +13,7 @@ MCU 임베디드 프로젝트
 | [WasherFSM](./WasherFSM/README.md) | 버튼으로 세탁/헹굼/탈수 시간 설정하는 세탁기 시뮬레이터 | FSM, FND, PWM, Timer |
 | [LCD_CAL](./LCD_CAL_RTC/README.md) | LCD화면에 계산기, 시계 출력하기 | LCD1602, DS1307 RTC,  I2C |
 | [MotorControl](./MotorControl/README.md) | STM32F411xE 기반 DC 모터 방향/속도 제어 | 레지스터 제어, PWM, UART, EXTI |
-| [RPS_YOLO](./RPS_YOLO/README.md) | 카메라로 두 손을 인식해 가위바위보 승패를 자동 판정하는 실시간 게임 | YOLOv11, TensorRT, PyCUDA, OpenCV |
+| [RPS_YOLO](./RPS_yolo/README.md) | 카메라로 두 손을 인식해 가위바위보 승패를 자동 판정하는 실시간 게임 | YOLOv11, TensorRT, PyCUDA, OpenCV |
 
 
 ---
