@@ -14,6 +14,7 @@ MCU 임베디드 프로젝트
 | [LCD_CAL](./LCD_CAL_RTC/README.md) | LCD화면에 계산기, 시계 출력하기 | LCD1602, DS1307 RTC,  I2C |
 | [MotorControl](./MotorControl/README.md) | STM32F411xE 기반 DC 모터 방향/속도 제어 | 레지스터 제어, PWM, UART, EXTI |
 | [RPS_YOLO](./RPS_yolo/README.md) | 카메라로 두 손을 인식해 가위바위보 승패를 자동 판정하는 실시간 게임 | YOLOv11, TensorRT, PyCUDA, OpenCV |
+| [BoardGuard](./BoardGuard/README.md) | 컨베이어 위 PCB를 카메라로 양품/불량 판독 후 불량품 자동 배출 | PatchCore, Flask, GPIO, STM32 FSM |
 
 
 ---
@@ -24,7 +25,7 @@ MCU 임베디드 프로젝트
 - **IDE** : Atmel Studio 7, VSCode
 - **언어** : C (AVR-GCC), C++, Python
 - **통신** : UART (PC 디버깅 / 블루투스)
-- **AI / 추론** : YOLOv11, TensorRT, PyCUDA, OpenCV
+- **AI / 추론** : YOLOv11, PatchCore, TensorRT, PyCUDA, OpenCV
 
 ---
 
@@ -36,6 +37,10 @@ MCU 임베디드 프로젝트
 #### RPS_YOLO
 카메라 한 대로 두 사람의 손을 동시에 인식해 가위/바위/보를 분류하고, 승패를 자동으로 판정하는 실시간 대전 게임.
 YOLOv11n을 커스텀 데이터셋으로 파인튜닝한 뒤 TensorRT 엔진으로 변환하여 Zero-Copy 메모리 구조로 온디바이스 추론을 수행하며, 검출 노이즈에 강건하도록 슬라이딩 윈도우 다수결 기반 안정성 판정 로직을 설계 적용.
+
+#### BoardGuard
+컨베이어 벨트 위 PCB를 카메라로 촬영해 양품/불량을 판독하고, 불량 위치·유형을 기록한 뒤 자동으로 배출하는 검사 시스템 (4인 팀 프로젝트, 팀장·AI 모델링 담당).
+정상 데이터만으로 학습하는 PatchCore 비지도 이상탐지로 앞/뒷면을 개별 판정하고, Jetson 판정 결과를 GPIO로 STM32F411RE 상태머신에 전달해 스텝모터·서보로 불량품을 배출.
 
 ---
 
