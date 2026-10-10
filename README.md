@@ -2,9 +2,9 @@
 
 ## 👋 박수민
 
-SSAFY에서 웹·AI 서비스 프로젝트 진행 후, 현재 **AI시스템반도체SW개발자 과정**에서 임베디드 펌웨어를 학습하고 있습니다.
+SSAFY에서 웹·AI 서비스를 개발하며 소프트웨어 역량을 쌓은 후, 현재 **AI시스템반도체SW개발자 과정**에서 임베디드 펌웨어 개발 직무를 목표로 학습하고 있습니다.
 
-8bit AVR → ARM Cortex-M4 베어메탈 → Jetson 온디바이스 AI 순서로 프로젝트를 진행하며, 하드웨어를 레지스터 단위로 직접 제어하는 것부터 센서·모터를 상위 시스템(PC·모바일·AI)과 연결하는 것까지 **동작하는 결과물**을 만드는 데 집중했습니다.
+8bit AVR → ARM Cortex-M4 베어메탈 → Jetson 온디바이스 AI 프로젝트를 진행하며, 하드웨어를 레지스터 단위로 직접 제어하는 것부터 센서·모터를 상위 시스템(PC·모바일·AI)과 연결하는 것까지 **동작하는 결과물**을 만드는 데 집중하고 있습니다.
 
 📧 jenny11994@naver.com &nbsp;·&nbsp; 🐙 [github.com/clap-min99](https://github.com/clap-min99)
 
@@ -212,7 +212,7 @@ LCD1602와 4×4 키패드로 사칙연산(괄호 포함)을 처리하는 계산�
 | [**달디단**](https://github.com/clap-min99/daldidan) | 스마트폰 카메라로 사과 당도(Brix)를 예측하는 AI 서비스 (SSAFY) | 6인 · 6주 | 프론트, 초기 객체 인식(YOLOv8n)·당도 예측(XGBoost) 모델, UI/UX | React Native, FastAPI, YOLOv8, EfficientNet |
 | [**zeepseek**](https://github.com/clap-min99/zeepseek) | 사회초년생을 위한 부동산 매물 빅데이터 기반 추천 서비스 (SSAFY) | 6인 · 7주 | 프론트, 데이터 크롤링 | React, Spring Boot, Elasticsearch |
 | [**마래바**](https://github.com/clap-min99/maraeba) | 청각장애 아동을 위한 발음 교정·언어 학습 서비스 (SSAFY) | 6인 | 프론트 | React, Spring Boot, Flask, WebRTC |
-| [**MVBeer**](https://github.com/clap-min99/MVBeer) | 영화 ↔ 주류 추천 웹 서비스 (SSAFY) | - | - | Vue 3, Django REST Framework |
+
 
 ---
 
