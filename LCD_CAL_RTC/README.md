@@ -19,7 +19,7 @@ LCD1602(4bit 모드)에 사칙연산 결과를 표시하고, 버튼으로 DS1307
 
 2. 시계
 
-![cal_brac](./assets/cal_brac.gif)
+![lcd_clock](./assets/LCD_CLOCK.gif)
 
 ---
 
