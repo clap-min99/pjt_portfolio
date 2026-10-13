@@ -2,11 +2,28 @@
 
 ## 👋 박수민
 
-SSAFY에서 웹·AI 서비스를 개발하며 소프트웨어 역량을 쌓은 후, 현재 **AI시스템반도체SW개발자 과정**에서 임베디드 펌웨어 개발 직무를 목표로 학습하고 있습니다.
+> **센서 입력부터 하드웨어 제어, 상위 서비스 연동까지 구현하는 임베디드 SW 개발자를 목표로 합니다.**
 
-8bit AVR → ARM Cortex-M4 베어메탈 → Jetson 온디바이스 AI 프로젝트를 진행하며, 하드웨어를 레지스터 단위로 직접 제어하는 것부터 센서·모터를 상위 시스템(PC·모바일·AI)과 연결하는 것까지 **동작하는 결과물**을 만드는 데 집중하고 있습니다.
+📧 [jenny11994@naver.com](mailto:jenny11994@naver.com) &nbsp;·&nbsp; 🐙 [github.com/clap-min99](https://github.com/clap-min99)
 
-📧 jenny11994@naver.com &nbsp;·&nbsp; 🐙 [github.com/clap-min99](https://github.com/clap-min99)
+### 소개
+
+SSAFY에서 웹·모바일·AI 서비스를 개발하고, **AI시스템반도체SW개발자 과정**에서 하드웨어 제어와 임베디드 시스템 개발로 경험을 넓히고 있습니다. AVR·STM32 펌웨어부터 Jetson 온디바이스 AI와 Linux 디바이스 드라이버까지, 실제 보드에서 동작하는 결과물을 만드는 데 집중합니다.
+
+### 이력
+
+| 교육 과정 | 교육 기간 | 주요 경험 |
+|---|:---:|---|
+| **SSAFY (삼성 청년 SW 아카데미)** | 2024.07.02 ~ 2025.06.30 | 웹·모바일 서비스 팀 프로젝트, 프론트엔드 개발, 데이터 크롤링 및 AI 모델 개발 경험 |
+| **AI시스템반도체SW개발자 과정** | 2026.05.27 ~ 2026.12.16 (수료 예정) | AVR·STM32 레지스터 기반 펌웨어, 센서·모터 제어, Jetson AI 추론, Linux 디바이스 드라이버 팀 프로젝트 |
+
+### 강점
+
+- **하드웨어 제어와 동작 설계** — AVR·STM32 프로젝트에서 레지스터, 인터럽트, 타이머·PWM과 FSM을 활용해 센서 입력과 모터 동작을 구현했습니다.
+- **시스템을 연결하는 개발 경험** — Linux 드라이버와 사용자 프로그램, MCU와 Qt·모바일 관제를 연결하는 프로젝트를 진행했습니다. 웹·앱 개발 경험을 하드웨어 연동으로 확장하고 있습니다.
+- **AI 모델링과 팀 프로젝트 수행** — BoardGuard에서 팀장과 AI 모델링을 맡아 PatchCore 기반 PCB 이상탐지를 구현했고, SSAFY에서는 서비스 화면 개발과 초기 AI 모델 개발에 참여했습니다.
+
+---
 
 > 각 프로젝트 제목을 누르면 핀맵, FSM, 주요 코드, 트러블슈팅이 정리된 상세 README로 이동합니다.
 
@@ -14,6 +31,7 @@ SSAFY에서 웹·AI 서비스를 개발하며 소프트웨어 역량을 쌓은 �
   <img src="https://img.shields.io/badge/ATmega128A-AVR-CC0000?logo=microchiptechnology&logoColor=white" />
   <img src="https://img.shields.io/badge/STM32F411RE-Cortex--M4-03234B?logo=stmicroelectronics&logoColor=white" />
   <img src="https://img.shields.io/badge/Jetson_Orin_Nano-76B900?logo=nvidia&logoColor=white" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black" />
   <img src="https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=black" />
   <img src="https://img.shields.io/badge/C++-00599C?logo=cplusplus&logoColor=white" />
   <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" />
@@ -28,7 +46,8 @@ SSAFY에서 웹·AI 서비스를 개발하며 소프트웨어 역량을 쌓은 �
 
 | 플랫폼 | 프로젝트 | 한 줄 요약 | 인원 · 기간 | 핵심 기술 |
 |:---:|---|---|:---:|---|
-| **Jetson Orin Nano** | [BoardGuard](#-boardguard--pcb-불량-검사배출-시스템) | 컨베이어 위 PCB 양품/불량 판독 후 불량품 자동 배출 | 4인 (팀장) · 2주 | PatchCore, TensorRT, Flask, GPIO ↔ STM32 FSM |
+| **Jetson Orin Nano** | [SmartFan](#-smartfan--linux-디바이스-드라이버-기반-팬-제어) | 초음파 접근 감지·엔코더 입력으로 팬 자동/수동 제어 | 4인 · 3일 | Linux Driver, GPIO/IRQ, PWM, Character Device, FSM |
+| | [BoardGuard](#-boardguard--pcb-불량-검사배출-시스템) | 컨베이어 위 PCB 양품/불량 판독 후 불량품 자동 배출 | 4인 (팀장) · 2주 | PatchCore, TensorRT, Flask, GPIO ↔ STM32 FSM |
 | | [RPS_YOLO](#-rps_yolo--실시간-가위바위보-대전-게임) | 두 사람의 손을 인식해 가위바위보 승패 자동 판정 | 개인 · 1일 | YOLOv11n, TensorRT, PyCUDA Zero-Copy, OpenCV |
 | **STM32F411RE** | [Smart Gas Monitoring](#-smart-gas-monitoring--가스-누출-감지원격-차단-시스템) | 가스 누출 감지 시 밸브 차단·환기·경보, Qt/Android 원격 관제 | 4인 · 5일 | Bare-metal C, ADC, PWM, UART, Qt, TCP |
 | | [MotorControl](#-motorcontrol--dc-모터-방향속도-제어) | 버튼 클릭 패턴으로 모터 방향, UART로 속도 제어 | 3인 · 3일 | 레지스터 제어, TIM5 PWM, EXTI, UART |
@@ -39,6 +58,24 @@ SSAFY에서 웹·AI 서비스를 개발하며 소프트웨어 역량을 쌓은 �
 ---
 
 ## 🟩 Jetson Orin Nano
+
+### 🌀 [SmartFan](./SmartFan/README.md) — Linux 디바이스 드라이버 기반 팬 제어
+
+> 👥 4인 팀 · ⏱ 3일
+
+Jetson Orin Nano에서 초음파 센서와 로터리 엔코더로 팬을 자동/수동 제어합니다. 커널 드라이버가 하드웨어 입출력을 담당하고, 사용자 프로그램이 이벤트와 상태 전환을 처리하며, 실제 보드에서 통합 동작 시연을 완료했습니다.
+
+<img src="./SmartFan/assets/smart%20fan.gif" width="400" alt="SmartFan 하드웨어 동작 시연" />
+
+- **입력 드라이버**: 초음파 Echo의 상승·하강 IRQ로 거리 측정, Completion으로 측정 완료 동기화, 엔코더 회전량·버튼 입력 전달 및 spinlock으로 공유 데이터 보호
+- **커널 ↔ 사용자 공간 연동**: Character Device의 바이너리 `read()` / `write()`로 센서·엔코더 입력과 PWM·LED 출력을 연결하고, 사용자 프로그램을 이벤트 처리 → 상태 머신 → 출력 제어로 분리
+- **자동/수동 제어**: 자동 모드에서 20cm 이내 접근 시 기동하고 거리 초과·센서 측정 실패 시 정지, 엔코더 버튼으로 ON/OFF 및 회전으로 3단계 풍량 조절
+- **PWM·LED 출력**: Linux PWM Framework로 1kHz PWM과 단계별 Duty 60/80/100% 적용, OFF/S1/S2/S3에 따라 LED 0/2/5/8개 점등
+- **통합 안정성·문제 해결**: 시작·종료 및 입력·모터 오류 시 OFF 요청, 상태 전환·오류 처리 모의 테스트 구성, PWM Pinmux·컨트롤러 설정과 엔코더 풀업 누락 문제 해결
+
+`Linux Device Driver` `C` `GPIO/IRQ` `Completion` `spinlock` `PWM Framework` `Character Device` `FSM` `GCC/Make/Kbuild`
+
+---
 
 ### 🔍 [BoardGuard](./BoardGuard/README.md) — PCB 불량 검사·배출 시스템
 
@@ -221,7 +258,9 @@ LCD1602와 4×4 키패드로 사칙연산(괄호 포함)을 처리하는 계산�
 | 분류 | 내용 |
 |---|---|
 | MCU / Board | ATmega128A, STM32F411RE (Nucleo-64), Jetson Orin Nano |
-| IDE / Build | Atmel Studio 7, VSCode, Makefile + arm-none-eabi-gcc |
-| 언어 | C (AVR-GCC, ARM-GCC), C++, Python, Kotlin |
+| IDE / Build | Atmel Studio 7, VSCode, Makefile + arm-none-eabi-gcc, GCC / Make / Kbuild |
+| OS / Kernel | Jetson Linux, Linux 5.15.199-tegra (Smart Fan 보드 기록 기준) |
+| 언어 | C (AVR-GCC, ARM-GCC), C++, Python |
 | 통신 | UART, I2C(TWI), GPIO, TCP |
+| Linux Driver | Character Device, GPIO / IRQ, Completion, spinlock, Linux PWM Framework |
 | AI / 추론 | YOLOv11, PatchCore, TensorRT, PyCUDA, OpenCV |

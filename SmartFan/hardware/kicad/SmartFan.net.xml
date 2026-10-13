@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\Users\kccistc\Desktop\Linux-Driver-Team-Project---AI-System-on-Chip-Developer\hardware\kicad\SmartFan.kicad_sch</source>
+    <date>2026-10-12T14:30:56</date>
+    <tool>Eeschema 10.0.3</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>SmartFan.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="D1">
+      <value>LED1</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="LED_SEGMENT" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>724c3731-a5e1-4da8-bc41-b32c75ea49ee</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D2">
+      <value>LED2</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="LED_SEGMENT" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>75f7e6f6-f9ba-44d5-9a31-e316a7845ef4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D3">
+      <value>LED3</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="LED_SEGMENT" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>224961a6-7c67-4323-aadd-2891abecd53c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D4">
+      <value>LED4</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="LED_SEGMENT" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>16c0ec05-785b-4757-b90f-f5cf78488823</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D5">
+      <value>LED5</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="LED_SEGMENT" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>eef19d93-cc64-479a-b89c-937be9020c06</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D6">
+      <value>LED6</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="LED_SEGMENT" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dcb4411b-1b9f-410f-862d-42806d87c684</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D7">
+      <value>LED7</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="LED_SEGMENT" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>68160075-f1ee-4539-aa58-5574ecb5fafe</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="D8">
+      <value>LED8</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="LED_SEGMENT" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1095c2ef-4ba6-4367-9c18-f3a39b431081</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J1">
+      <value>Orin Nano J12 - PHYSICAL pin numbers</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="JETSON_J12_BOARD" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b8352a88-7431-4081-a9ac-33c076e1ead1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="3"/>
+            <pin num="5"/>
+            <pin num="7"/>
+            <pin num="9"/>
+            <pin num="11"/>
+            <pin num="13"/>
+            <pin num="15"/>
+            <pin num="17"/>
+            <pin num="19"/>
+            <pin num="21"/>
+            <pin num="23"/>
+            <pin num="25"/>
+            <pin num="27"/>
+            <pin num="29"/>
+            <pin num="31"/>
+            <pin num="33"/>
+            <pin num="35"/>
+            <pin num="37"/>
+            <pin num="39"/>
+            <pin num="2"/>
+            <pin num="4"/>
+            <pin num="6"/>
+            <pin num="8"/>
+            <pin num="10"/>
+            <pin num="12"/>
+            <pin num="14"/>
+            <pin num="16"/>
+            <pin num="18"/>
+            <pin num="20"/>
+            <pin num="22"/>
+            <pin num="24"/>
+            <pin num="26"/>
+            <pin num="28"/>
+            <pin num="30"/>
+            <pin num="32"/>
+            <pin num="34"/>
+            <pin num="36"/>
+            <pin num="38"/>
+            <pin num="40"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J2">
+      <value>Encoder - verify VCC / pin order</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="ENCODER_MODULE" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ea19c26e-fae2-4b00-beee-71eb1cc131e4</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J3">
+      <value>Ultrasonic - model TBD</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="ULTRASONIC_MODULE" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e553ff42-ac51-475b-b379-623bcea8bbb1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J5">
+      <value>HW-095 - power terminal / pin order TBD</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="MOTOR_DRIVER_MODULE" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>24ab0581-10e5-4ac0-9d8e-6aceb568d659</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="M1">
+      <value>EZmotor R300</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="DC_MOTOR" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b61c3dfe-91ef-4db3-ba49-d4fa99f2964f</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="RN1">
+      <value>9A331G - 8 x 330R</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="SmartFan" part="RN_9A331G_BUSSED" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="SmartFan.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>feda9332-bce3-4310-b3e1-0e0a4fa25a3b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+            <pin num="7"/>
+            <pin num="8"/>
+            <pin num="9"/>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="SmartFan" part="DC_MOTOR">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">DC_MOTOR</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="TERMINAL_1" type="passive"/>
+        <pin num="2" name="TERMINAL_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="SmartFan" part="ENCODER_MODULE">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">ENCODER_MODULE</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="S1" type="passive"/>
+        <pin num="2" name="S2" type="passive"/>
+        <pin num="3" name="KEY" type="passive"/>
+        <pin num="4" name="VCC" type="passive"/>
+        <pin num="5" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="SmartFan" part="JETSON_J12_BOARD">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">JETSON_J12_BOARD</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+        <pin num="5" name="5" type="passive"/>
+        <pin num="6" name="6" type="passive"/>
+        <pin num="7" name="7" type="passive"/>
+        <pin num="8" name="8" type="passive"/>
+        <pin num="9" name="9" type="passive"/>
+        <pin num="10" name="10" type="passive"/>
+        <pin num="11" name="11" type="passive"/>
+        <pin num="12" name="12" type="passive"/>
+        <pin num="13" name="13" type="passive"/>
+        <pin num="14" name="14" type="passive"/>
+        <pin num="15" name="15" type="passive"/>
+        <pin num="16" name="16" type="passive"/>
+        <pin num="17" name="17" type="passive"/>
+        <pin num="18" name="18" type="passive"/>
+        <pin num="19" name="19" type="passive"/>
+        <pin num="20" name="20" type="passive"/>
+        <pin num="21" name="21" type="passive"/>
+        <pin num="22" name="22" type="passive"/>
+        <pin num="23" name="23" type="passive"/>
+        <pin num="24" name="24" type="passive"/>
+        <pin num="25" name="25" type="passive"/>
+        <pin num="26" name="26" type="passive"/>
+        <pin num="27" name="27" type="passive"/>
+        <pin num="28" name="28" type="passive"/>
+        <pin num="29" name="29" type="passive"/>
+        <pin num="30" name="30" type="passive"/>
+        <pin num="31" name="31" type="passive"/>
+        <pin num="32" name="32" type="passive"/>
+        <pin num="33" name="33" type="passive"/>
+        <pin num="34" name="34" type="passive"/>
+        <pin num="35" name="35" type="passive"/>
+        <pin num="36" name="36" type="passive"/>
+        <pin num="37" name="37" type="passive"/>
+        <pin num="38" name="38" type="passive"/>
+        <pin num="39" name="39" type="passive"/>
+        <pin num="40" name="40" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="SmartFan" part="LED_SEGMENT">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED_SEGMENT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="K" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="SmartFan" part="MOTOR_DRIVER_MODULE">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">MOTOR_DRIVER_MODULE</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="ENA" type="passive"/>
+        <pin num="2" name="IN1" type="passive"/>
+        <pin num="3" name="IN2" type="passive"/>
+        <pin num="4" name="VMOTOR" type="passive"/>
+        <pin num="5" name="GND" type="passive"/>
+        <pin num="6" name="OUT1" type="passive"/>
+        <pin num="7" name="OUT2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="SmartFan" part="RN_9A331G_BUSSED">
+      <fields>
+        <field name="Reference">RN</field>
+        <field name="Value">RN_9A331G_BUSSED</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="COM" type="passive"/>
+        <pin num="2" name="R1" type="passive"/>
+        <pin num="3" name="R2" type="passive"/>
+        <pin num="4" name="R3" type="passive"/>
+        <pin num="5" name="R4" type="passive"/>
+        <pin num="6" name="R5" type="passive"/>
+        <pin num="7" name="R6" type="passive"/>
+        <pin num="8" name="R7" type="passive"/>
+        <pin num="9" name="R8" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="SmartFan" part="ULTRASONIC_MODULE">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">ULTRASONIC_MODULE</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC" type="passive"/>
+        <pin num="2" name="TRIG" type="passive"/>
+        <pin num="3" name="ECHO" type="passive"/>
+        <pin num="4" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries/>
+  <nets>
+    <net code="1" name="/ENC_KEY" class="Default">
+      <node ref="J1" pin="22" pinfunction="22_22" pintype="passive"/>
+      <node ref="J2" pin="3" pinfunction="KEY_3" pintype="passive"/>
+    </net>
+    <net code="2" name="/ENC_S1" class="Default">
+      <node ref="J1" pin="13" pinfunction="13_13" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="S1_1" pintype="passive"/>
+    </net>
+    <net code="3" name="/ENC_S2" class="Default">
+      <node ref="J1" pin="18" pinfunction="18_18" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="S2_2" pintype="passive"/>
+    </net>
+    <net code="4" name="/ENC_VCC_TBD" class="Default">
+      <node ref="J2" pin="4" pinfunction="VCC_4" pintype="passive"/>
+    </net>
+    <net code="5" name="/GND" class="Default">
+      <node ref="J1" pin="6" pinfunction="6_6" pintype="passive"/>
+      <node ref="J2" pin="5" pinfunction="GND_5" pintype="passive"/>
+      <node ref="J3" pin="4" pinfunction="GND_4" pintype="passive"/>
+      <node ref="J5" pin="3" pinfunction="IN2_3" pintype="passive"/>
+      <node ref="J5" pin="5" pinfunction="GND_5" pintype="passive"/>
+      <node ref="RN1" pin="1" pinfunction="COM_1" pintype="passive"/>
+    </net>
+    <net code="6" name="/LED1_A" class="Default">
+      <node ref="D1" pin="1" pinfunction="A_1" pintype="passive"/>
+      <node ref="J1" pin="7" pinfunction="7_7" pintype="passive"/>
+    </net>
+    <net code="7" name="/LED1_K" class="Default">
+      <node ref="D1" pin="2" pinfunction="K_2" pintype="passive"/>
+      <node ref="RN1" pin="2" pinfunction="R1_2" pintype="passive"/>
+    </net>
+    <net code="8" name="/LED2_A" class="Default">
+      <node ref="D2" pin="1" pinfunction="A_1" pintype="passive"/>
+      <node ref="J1" pin="12" pinfunction="12_12" pintype="passive"/>
+    </net>
+    <net code="9" name="/LED2_K" class="Default">
+      <node ref="D2" pin="2" pinfunction="K_2" pintype="passive"/>
+      <node ref="RN1" pin="3" pinfunction="R2_3" pintype="passive"/>
+    </net>
+    <net code="10" name="/LED3_A" class="Default">
+      <node ref="D3" pin="1" pinfunction="A_1" pintype="passive"/>
+      <node ref="J1" pin="19" pinfunction="19_19" pintype="passive"/>
+    </net>
+    <net code="11" name="/LED3_K" class="Default">
+      <node ref="D3" pin="2" pinfunction="K_2" pintype="passive"/>
+      <node ref="RN1" pin="4" pinfunction="R3_4" pintype="passive"/>
+    </net>
+    <net code="12" name="/LED4_A" class="Default">
+      <node ref="D4" pin="1" pinfunction="A_1" pintype="passive"/>
+      <node ref="J1" pin="16" pinfunction="16_16" pintype="passive"/>
+    </net>
+    <net code="13" name="/LED4_K" class="Default">
+      <node ref="D4" pin="2" pinfunction="K_2" pintype="passive"/>
+      <node ref="RN1" pin="5" pinfunction="R4_5" pintype="passive"/>
+    </net>
+    <net code="14" name="/LED5_A" class="Default">
+      <node ref="D5" pin="1" pinfunction="A_1" pintype="passive"/>
+      <node ref="J1" pin="21" pinfunction="21_21" pintype="passive"/>
+    </net>
+    <net code="15" name="/LED5_K" class="Default">
+      <node ref="D5" pin="2" pinfunction="K_2" pintype="passive"/>
+      <node ref="RN1" pin="6" pinfunction="R5_6" pintype="passive"/>
+    </net>
+    <net code="16" name="/LED6_A" class="Default">
+      <node ref="D6" pin="1" pinfunction="A_1" pintype="passive"/>
+      <node ref="J1" pin="23" pinfunction="23_23" pintype="passive"/>
+    </net>
+    <net code="17" name="/LED6_K" class="Default">
+      <node ref="D6" pin="2" pinfunction="K_2" pintype="passive"/>
+      <node ref="RN1" pin="7" pinfunction="R6_7" pintype="passive"/>
+    </net>
+    <net code="18" name="/LED7_A" class="Default">
+      <node ref="D7" pin="1" pinfunction="A_1" pintype="passive"/>
+      <node ref="J1" pin="37" pinfunction="37_37" pintype="passive"/>
+    </net>
+    <net code="19" name="/LED7_K" class="Default">
+      <node ref="D7" pin="2" pinfunction="K_2" pintype="passive"/>
+      <node ref="RN1" pin="8" pinfunction="R7_8" pintype="passive"/>
+    </net>
+    <net code="20" name="/LED8_A" class="Default">
+      <node ref="D8" pin="1" pinfunction="A_1" pintype="passive"/>
+      <node ref="J1" pin="31" pinfunction="31_31" pintype="passive"/>
+    </net>
+    <net code="21" name="/LED8_K" class="Default">
+      <node ref="D8" pin="2" pinfunction="K_2" pintype="passive"/>
+      <node ref="RN1" pin="9" pinfunction="R8_9" pintype="passive"/>
+    </net>
+    <net code="22" name="/MOTOR_ENA_PWM" class="Default">
+      <node ref="J1" pin="33" pinfunction="33_33" pintype="passive"/>
+      <node ref="J5" pin="1" pinfunction="ENA_1" pintype="passive"/>
+    </net>
+    <net code="23" name="/MOTOR_IN1" class="Default">
+      <node ref="J1" pin="29" pinfunction="29_29" pintype="passive"/>
+      <node ref="J5" pin="2" pinfunction="IN1_2" pintype="passive"/>
+    </net>
+    <net code="24" name="/MOTOR_OUT1" class="Default">
+      <node ref="J5" pin="6" pinfunction="OUT1_6" pintype="passive"/>
+      <node ref="M1" pin="1" pinfunction="TERMINAL_1_1" pintype="passive"/>
+    </net>
+    <net code="25" name="/MOTOR_OUT2" class="Default">
+      <node ref="J5" pin="7" pinfunction="OUT2_7" pintype="passive"/>
+      <node ref="M1" pin="2" pinfunction="TERMINAL_2_2" pintype="passive"/>
+    </net>
+    <net code="26" name="/US_ECHO_DIRECT" class="Default">
+      <node ref="J1" pin="36" pinfunction="36_36" pintype="passive"/>
+      <node ref="J3" pin="3" pinfunction="ECHO_3" pintype="passive"/>
+    </net>
+    <net code="27" name="/US_TRIG" class="Default">
+      <node ref="J1" pin="11" pinfunction="11_11" pintype="passive"/>
+      <node ref="J3" pin="2" pinfunction="TRIG_2" pintype="passive"/>
+    </net>
+    <net code="28" name="/US_VCC_TBD" class="Default">
+      <node ref="J3" pin="1" pinfunction="VCC_1" pintype="passive"/>
+    </net>
+    <net code="29" name="/V3V3" class="Default">
+      <node ref="J1" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="30" name="/V5V_BREADBOARD" class="Default">
+      <node ref="J1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J5" pin="4" pinfunction="VMOTOR_4" pintype="passive"/>
+    </net>
+    <net code="31" name="unconnected-(J1-Pad3)" class="Default">
+      <node ref="J1" pin="3" pinfunction="3_3" pintype="passive+no_connect"/>
+    </net>
+    <net code="32" name="unconnected-(J1-Pad4)" class="Default">
+      <node ref="J1" pin="4" pinfunction="4_4" pintype="passive+no_connect"/>
+    </net>
+    <net code="33" name="unconnected-(J1-Pad5)" class="Default">
+      <node ref="J1" pin="5" pinfunction="5_5" pintype="passive+no_connect"/>
+    </net>
+    <net code="34" name="unconnected-(J1-Pad8)" class="Default">
+      <node ref="J1" pin="8" pinfunction="8_8" pintype="passive+no_connect"/>
+    </net>
+    <net code="35" name="unconnected-(J1-Pad9)" class="Default">
+      <node ref="J1" pin="9" pinfunction="9_9" pintype="passive+no_connect"/>
+    </net>
+    <net code="36" name="unconnected-(J1-Pad10)" class="Default">
+      <node ref="J1" pin="10" pinfunction="10_10" pintype="passive+no_connect"/>
+    </net>
+    <net code="37" name="unconnected-(J1-Pad14)" class="Default">
+      <node ref="J1" pin="14" pinfunction="14_14" pintype="passive+no_connect"/>
+    </net>
+    <net code="38" name="unconnected-(J1-Pad15)" class="Default">
+      <node ref="J1" pin="15" pinfunction="15_15" pintype="passive+no_connect"/>
+    </net>
+    <net code="39" name="unconnected-(J1-Pad17)" class="Default">
+      <node ref="J1" pin="17" pinfunction="17_17" pintype="passive+no_connect"/>
+    </net>
+    <net code="40" name="unconnected-(J1-Pad20)" class="Default">
+      <node ref="J1" pin="20" pinfunction="20_20" pintype="passive+no_connect"/>
+    </net>
+    <net code="41" name="unconnected-(J1-Pad24)" class="Default">
+      <node ref="J1" pin="24" pinfunction="24_24" pintype="passive+no_connect"/>
+    </net>
+    <net code="42" name="unconnected-(J1-Pad25)" class="Default">
+      <node ref="J1" pin="25" pinfunction="25_25" pintype="passive+no_connect"/>
+    </net>
+    <net code="43" name="unconnected-(J1-Pad26)" class="Default">
+      <node ref="J1" pin="26" pinfunction="26_26" pintype="passive+no_connect"/>
+    </net>
+    <net code="44" name="unconnected-(J1-Pad27)" class="Default">
+      <node ref="J1" pin="27" pinfunction="27_27" pintype="passive+no_connect"/>
+    </net>
+    <net code="45" name="unconnected-(J1-Pad28)" class="Default">
+      <node ref="J1" pin="28" pinfunction="28_28" pintype="passive+no_connect"/>
+    </net>
+    <net code="46" name="unconnected-(J1-Pad30)" class="Default">
+      <node ref="J1" pin="30" pinfunction="30_30" pintype="passive+no_connect"/>
+    </net>
+    <net code="47" name="unconnected-(J1-Pad32)" class="Default">
+      <node ref="J1" pin="32" pinfunction="32_32" pintype="passive+no_connect"/>
+    </net>
+    <net code="48" name="unconnected-(J1-Pad34)" class="Default">
+      <node ref="J1" pin="34" pinfunction="34_34" pintype="passive+no_connect"/>
+    </net>
+    <net code="49" name="unconnected-(J1-Pad35)" class="Default">
+      <node ref="J1" pin="35" pinfunction="35_35" pintype="passive+no_connect"/>
+    </net>
+    <net code="50" name="unconnected-(J1-Pad38)" class="Default">
+      <node ref="J1" pin="38" pinfunction="38_38" pintype="passive+no_connect"/>
+    </net>
+    <net code="51" name="unconnected-(J1-Pad39)" class="Default">
+      <node ref="J1" pin="39" pinfunction="39_39" pintype="passive+no_connect"/>
+    </net>
+    <net code="52" name="unconnected-(J1-Pad40)" class="Default">
+      <node ref="J1" pin="40" pinfunction="40_40" pintype="passive+no_connect"/>
+    </net>
+  </nets>
+</export>
