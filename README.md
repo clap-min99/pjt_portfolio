@@ -10,6 +10,8 @@
 
 SSAFY에서 웹·모바일·AI 서비스를 개발하고, **AI시스템반도체SW개발자 과정**에서 하드웨어 제어와 임베디드 시스템 개발로 경험을 넓히고 있습니다. AVR·STM32 펌웨어부터 Jetson 온디바이스 AI와 Linux 디바이스 드라이버까지, 실제 보드에서 동작하는 결과물을 만드는 데 집중합니다.
 
+임베디드,SSD,자동차 SW를 꾸준히 공부하고자 뉴스 수집부터 개념 학습·복습까지 가능한 개인 학습 웹 앱 [**SSD Study App ↗**](https://ssd-studyapp.vercel.app)을 만들어 활용하고 있습니다.
+
 ### 이력
 
 | 교육 과정 | 교육 기간 | 주요 경험 |
@@ -241,10 +243,11 @@ LCD1602와 4×4 키패드로 사칙연산(괄호 포함)을 처리하는 계산�
 
 ## 📎 Other Projects (Web · AI 서비스)
 
-임베디드 이전에 진행한 웹/앱 서비스 프로젝트입니다. 자세한 내용은 각 레포에 정리되어 있습니다.
+개인 학습 도구와 웹/앱 서비스 프로젝트입니다. 화면과 자세한 내용은 각 저장소 README에 정리합니다.
 
 | 프로젝트 | 설명 | 인원 · 기간 | 담당 | 기술 스택 |
 |---|---|:---:|---|---|
+| [**SSD Study App**](https://github.com/clap-min99/ssd_studyapp) | SSD·자동차 SW 학습을 위한 개인 웹 앱. 뉴스 메일 자동 수집, 개념 학습·복습 기능 제공 | 개인 | 기획·개발·배포 | React, Django, PostgreSQL |
 | [**izi_auto**](https://github.com/clap-min99/izi_auto) | 피아노 스튜디오 네이버 예약 → 입금 확인 → 문자 발송 자동화 (실제 운영 중) | 2인 | 프론트 전반, 문자 발송 로직, 외부 API 연동, 운영 이슈 대응 | React, Django, 네이버 SENS, 팝빌 API |
 | [**달디단**](https://github.com/clap-min99/daldidan) | 스마트폰 카메라로 사과 당도(Brix)를 예측하는 AI 서비스 (SSAFY) | 6인 · 6주 | 프론트, 초기 객체 인식(YOLOv8n)·당도 예측(XGBoost) 모델, UI/UX | React Native, FastAPI, YOLOv8, EfficientNet |
 | [**zeepseek**](https://github.com/clap-min99/zeepseek) | 사회초년생을 위한 부동산 매물 빅데이터 기반 추천 서비스 (SSAFY) | 6인 · 7주 | 프론트, 데이터 크롤링 | React, Spring Boot, Elasticsearch |
