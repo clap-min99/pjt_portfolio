@@ -48,8 +48,8 @@ SSAFY에서 웹·모바일·AI 서비스를 개발하고, **AI시스템반도체
 
 | 플랫폼 | 프로젝트 | 한 줄 요약 | 인원 · 기간 | 핵심 기술 |
 |:---:|---|---|:---:|---|
-| **Jetson Orin Nano** | [SmartFan](#-smartfan--linux-디바이스-드라이버-기반-팬-제어) | 초음파 접근 감지·엔코더 입력으로 팬 자동/수동 제어 | 4인 · 3일 | Linux Driver, GPIO/IRQ, PWM, Character Device, FSM |
-| | [BoardGuard](#-boardguard--pcb-불량-검사배출-시스템) | 컨베이어 위 PCB 양품/불량 판독 후 불량품 자동 배출 | 4인 (팀장) · 2주 | PatchCore, TensorRT, Flask, GPIO ↔ STM32 FSM |
+| **Jetson Orin Nano** | [BoardGuard](#-boardguard--pcb-불량-검사배출-시스템) | 컨베이어 위 PCB 양품/불량 판독 후 불량품 자동 배출 | 4인 (팀장) · 2주 | PatchCore, TensorRT, Flask, GPIO ↔ STM32 FSM |
+| | [SmartFan](#-smartfan--linux-디바이스-드라이버-기반-팬-제어) | 초음파 접근 감지·엔코더 입력으로 팬 자동/수동 제어 | 4인 · 3일 | Linux Driver, GPIO/IRQ, PWM, Character Device, FSM |
 | | [RPS_YOLO](#-rps_yolo--실시간-가위바위보-대전-게임) | 두 사람의 손을 인식해 가위바위보 승패 자동 판정 | 개인 · 1일 | YOLOv11n, TensorRT, PyCUDA Zero-Copy, OpenCV |
 | **STM32F411RE** | [Smart Gas Monitoring](#-smart-gas-monitoring--가스-누출-감지원격-차단-시스템) | 가스 누출 감지 시 밸브 차단·환기·경보, Qt/Android 원격 관제 | 4인 · 5일 | Bare-metal C, ADC, PWM, UART, Qt, TCP |
 | | [MotorControl](#-motorcontrol--dc-모터-방향속도-제어) | 버튼 클릭 패턴으로 모터 방향, UART로 속도 제어 | 3인 · 3일 | 레지스터 제어, TIM5 PWM, EXTI, UART |
@@ -60,24 +60,6 @@ SSAFY에서 웹·모바일·AI 서비스를 개발하고, **AI시스템반도체
 ---
 
 ## 🟩 Jetson Orin Nano
-
-### 🌀 [SmartFan](./SmartFan/README.md) — Linux 디바이스 드라이버 기반 팬 제어
-
-> 👥 4인 팀 · ⏱ 3일
-
-Jetson Orin Nano에서 초음파 센서와 로터리 엔코더로 팬을 자동/수동 제어합니다. 커널 드라이버가 하드웨어 입출력을 담당하고, 사용자 프로그램이 이벤트와 상태 전환을 처리하며, 실제 보드에서 통합 동작 시연을 완료했습니다.
-
-<img src="./SmartFan/assets/smart%20fan.gif" width="400" alt="SmartFan 하드웨어 동작 시연" />
-
-- **입력 드라이버**: 초음파 Echo의 상승·하강 IRQ로 거리 측정, Completion으로 측정 완료 동기화, 엔코더 회전량·버튼 입력 전달 및 spinlock으로 공유 데이터 보호
-- **커널 ↔ 사용자 공간 연동**: Character Device의 바이너리 `read()` / `write()`로 센서·엔코더 입력과 PWM·LED 출력을 연결하고, 사용자 프로그램을 이벤트 처리 → 상태 머신 → 출력 제어로 분리
-- **자동/수동 제어**: 자동 모드에서 20cm 이내 접근 시 기동하고 거리 초과·센서 측정 실패 시 정지, 엔코더 버튼으로 ON/OFF 및 회전으로 3단계 풍량 조절
-- **PWM·LED 출력**: Linux PWM Framework로 1kHz PWM과 단계별 Duty 60/80/100% 적용, OFF/S1/S2/S3에 따라 LED 0/2/5/8개 점등
-- **통합 안정성·문제 해결**: 시작·종료 및 입력·모터 오류 시 OFF 요청, 상태 전환·오류 처리 모의 테스트 구성, PWM Pinmux·컨트롤러 설정과 엔코더 풀업 누락 문제 해결
-
-`Linux Device Driver` `C` `GPIO/IRQ` `Completion` `spinlock` `PWM Framework` `Character Device` `FSM` `GCC/Make/Kbuild`
-
----
 
 ### 🔍 [BoardGuard](./BoardGuard/README.md) — PCB 불량 검사·배출 시스템
 
@@ -102,6 +84,24 @@ Jetson Orin Nano에서 초음파 센서와 로터리 엔코더로 팬을 자동/
 - **Jetson ↔ MCU 연동**: GPIO 3라인(STOP/PASS/FAIL)으로 판정 결과를 STM32 상태머신에 전달 → 스텝모터 이송 + 서보 push로 배출
 
 `PatchCore` `TensorRT` `PyTorch` `OpenCV` `Flask` `STM32F411RE` `GPIO`
+
+---
+
+### 🌀 [SmartFan](./SmartFan/README.md) — Linux 디바이스 드라이버 기반 팬 제어
+
+> 👥 4인 팀 · ⏱ 3일
+
+Jetson Orin Nano에서 초음파 센서와 로터리 엔코더로 팬을 자동/수동 제어합니다. 커널 드라이버가 하드웨어 입출력을 담당하고, 사용자 프로그램이 이벤트와 상태 전환을 처리하며, 실제 보드에서 통합 동작 시연을 완료했습니다.
+
+<img src="./SmartFan/assets/smart%20fan.gif" width="400" alt="SmartFan 하드웨어 동작 시연" />
+
+- **입력 드라이버**: 초음파 Echo의 상승·하강 IRQ로 거리 측정, Completion으로 측정 완료 동기화, 엔코더 회전량·버튼 입력 전달 및 spinlock으로 공유 데이터 보호
+- **커널 ↔ 사용자 공간 연동**: Character Device의 바이너리 `read()` / `write()`로 센서·엔코더 입력과 PWM·LED 출력을 연결하고, 사용자 프로그램을 이벤트 처리 → 상태 머신 → 출력 제어로 분리
+- **자동/수동 제어**: 자동 모드에서 20cm 이내 접근 시 기동하고 거리 초과·센서 측정 실패 시 정지, 엔코더 버튼으로 ON/OFF 및 회전으로 3단계 풍량 조절
+- **PWM·LED 출력**: Linux PWM Framework로 1kHz PWM과 단계별 Duty 60/80/100% 적용, OFF/S1/S2/S3에 따라 LED 0/2/5/8개 점등
+- **통합 안정성·문제 해결**: 시작·종료 및 입력·모터 오류 시 OFF 요청, 상태 전환·오류 처리 모의 테스트 구성, PWM Pinmux·컨트롤러 설정과 엔코더 풀업 누락 문제 해결
+
+`Linux Device Driver` `C` `GPIO/IRQ` `Completion` `spinlock` `PWM Framework` `Character Device` `FSM` `GCC/Make/Kbuild`
 
 ---
 
