@@ -48,6 +48,7 @@ SSAFY에서 웹·모바일·AI 서비스를 개발하고, **AI시스템반도체
 
 | 플랫폼 | 프로젝트 | 한 줄 요약 | 인원 · 기간 | 핵심 기술 |
 |:---:|---|---|:---:|---|
+| **Basys3 (Artix-7 FPGA)** | [Stopwatch](./Stopwatch/README.md) | 시계·스톱워치 모드 전환 및 일시정지 후 FND 애니메이션 | — | Verilog RTL, FSM, Debounce, Tick, FND |
 | **Jetson Orin Nano** | [BoardGuard](#-boardguard--pcb-불량-검사배출-시스템) | 컨베이어 위 PCB 양품/불량 판독 후 불량품 자동 배출 | 4인 (팀장) · 2주 | PatchCore, TensorRT, Flask, GPIO ↔ STM32 FSM |
 | | [SmartFan](#-smartfan--linux-디바이스-드라이버-기반-팬-제어) | 초음파 접근 감지·엔코더 입력으로 팬 자동/수동 제어 | 4인 · 3일 | Linux Driver, GPIO/IRQ, PWM, Character Device, FSM |
 | | [RPS_YOLO](#-rps_yolo--실시간-가위바위보-대전-게임) | 두 사람의 손을 인식해 가위바위보 승패 자동 판정 | 개인 · 1일 | YOLOv11n, TensorRT, PyCUDA Zero-Copy, OpenCV |
@@ -241,6 +242,24 @@ LCD1602와 4×4 키패드로 사칙연산(괄호 포함)을 처리하는 계산�
 
 ---
 
+## 🟪 Basys3 (Artix-7 FPGA)
+
+### ⏱️ [Stopwatch](./Stopwatch/README.md) — FPGA 시계·스톱워치
+
+Basys3 보드의 버튼과 4자리 7세그먼트로 시계와 10ms 단위 스톱워치를 구현한 Verilog RTL 프로젝트입니다.
+
+<img src="./Stopwatch/assets/basys3.gif" width="480" alt="Basys3 시계·스톱워치 동작 시연" />
+
+- **FSM 제어**: 시계·스톱워치·일시정지 상태를 분리하고 버튼으로 모드 전환, 초기화, 정지·재개
+- **입력 처리**: 약 10ms 디바운싱과 상승 에지 검출로 버튼을 한 번 누를 때 한 클럭 펄스 생성
+- **시간·표시 분리**: 100MHz 클럭에서 10ms 계측 tick과 1ms FND 스캔 tick 생성, BCD 변환 및 4자리 멀티플렉싱
+- **대기 애니메이션**: 일시정지 상태에서 5초간 입력이 없으면 FND 외곽을 따라 12단계 애니메이션 표시
+- **테스트벤치 포함**: tick 생성기, 버튼 에지 검출, 모드 FSM의 시뮬레이션 입력 구성
+
+`Basys3` `Artix-7` `Verilog` `Vivado 2020.2` `FSM` `Debounce` `7-Segment`
+
+---
+
 ## 📎 Other Projects (Web · AI 서비스)
 
 개인 학습 도구와 웹/앱 서비스 프로젝트입니다. 화면과 자세한 내용은 각 저장소 README에 정리합니다.
@@ -260,10 +279,10 @@ LCD1602와 4×4 키패드로 사칙연산(괄호 포함)을 처리하는 계산�
 
 | 분류 | 내용 |
 |---|---|
-| MCU / Board | ATmega128A, STM32F411RE (Nucleo-64), Jetson Orin Nano |
-| IDE / Build | Atmel Studio 7, VSCode, Makefile + arm-none-eabi-gcc, GCC / Make / Kbuild |
+| MCU / Board | ATmega128A, STM32F411RE (Nucleo-64), Jetson Orin Nano, Basys3 (Artix-7) |
+| IDE / Build | Atmel Studio 7, VSCode, Makefile + arm-none-eabi-gcc, GCC / Make / Kbuild, Vivado 2020.2 |
 | OS / Kernel | Jetson Linux, Linux 5.15.199-tegra (Smart Fan 보드 기록 기준) |
-| 언어 | C (AVR-GCC, ARM-GCC), C++, Python |
+| 언어 | C (AVR-GCC, ARM-GCC), C++, Python, Verilog HDL |
 | 통신 | UART, I2C(TWI), GPIO, TCP |
 | Linux Driver | Character Device, GPIO / IRQ, Completion, spinlock, Linux PWM Framework |
 | AI / 추론 | YOLOv11, PatchCore, TensorRT, PyCUDA, OpenCV |

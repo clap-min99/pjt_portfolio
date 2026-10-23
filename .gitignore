@@ -38,3 +38,21 @@ Thumbs.db
 *~
 *.bak
 *.tmp
+
+# Vivado generated files (keep .xpr, .srcs, RTL, XDC and testbenches)
+/Stopwatch/.Xil/
+/Stopwatch/*.cache/
+/Stopwatch/*.gen/
+/Stopwatch/*.hw/
+/Stopwatch/*.ip_user_files/
+/Stopwatch/*.runs/
+/Stopwatch/*.sim/
+/Stopwatch/*.jou
+/Stopwatch/*.log
+/Stopwatch/*.str
+/Stopwatch/*.xpr.lock
+/Stopwatch/*.backup.*
+/Stopwatch/*.wdb
+/Stopwatch/*.wcfg
+/Stopwatch/*.dcp
+/Stopwatch/*.bit
