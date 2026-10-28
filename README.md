@@ -49,6 +49,7 @@ SSAFY에서 웹·모바일·AI 서비스를 개발하고, **AI시스템반도체
 | 플랫폼 | 프로젝트 | 한 줄 요약 | 인원 · 기간 | 핵심 기술 |
 |:---:|---|---|:---:|---|
 | **Basys3 (Artix-7 FPGA)** | [Stopwatch](./Stopwatch/README.md) | 시계·스톱워치 모드 전환 및 일시정지 후 FND 애니메이션 | — | Verilog RTL, FSM, Debounce, Tick, FND |
+| | [Microwave](./Microwave/README.md) | 로터리 시간 설정, 서보 도어 및 DC 모터 PWM 제어 | — | Verilog RTL, Debounce, FND, PWM |
 | **Jetson Orin Nano** | [BoardGuard](#-boardguard--pcb-불량-검사배출-시스템) | 컨베이어 위 PCB 양품/불량 판독 후 불량품 자동 배출 | 4인 (팀장) · 2주 | PatchCore, TensorRT, Flask, GPIO ↔ STM32 FSM |
 | | [SmartFan](#-smartfan--linux-디바이스-드라이버-기반-팬-제어) | 초음파 접근 감지·엔코더 입력으로 팬 자동/수동 제어 | 4인 · 3일 | Linux Driver, GPIO/IRQ, PWM, Character Device, FSM |
 | | [RPS_YOLO](#-rps_yolo--실시간-가위바위보-대전-게임) | 두 사람의 손을 인식해 가위바위보 승패 자동 판정 | 개인 · 1일 | YOLOv11n, TensorRT, PyCUDA Zero-Copy, OpenCV |

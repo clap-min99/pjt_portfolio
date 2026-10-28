@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#253450" stroke-width="1.5"/></marker><style>text{font-family:'Malgun Gothic',Arial,sans-serif;fill:#253450}.title{font-size:30px;font-weight:bold}.state{font-size:28px;font-weight:bold}.note{font-size:18px}.small{font-size:16px}.line{fill:none;stroke:#253450;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}.arrow{fill:none;stroke:#253450;stroke-width:2.5;stroke-linecap:round;marker-end:url(#arrow)}</style></defs>
+<rect width="1400" height="800" fill="#ffffff"/>
+<text x="105" y="77" class="title">Microwave FSM</text><path class="line" d="M103 88 Q245 91 383 87"/>
+<path class="line" d="M126 303 C124 220 183 186 259 188 C337 187 394 235 391 304 C390 375 340 421 261 423 C182 424 128 379 126 303 Z"/>
+<path class="line" d="M570 305 C568 225 628 189 703 190 C781 191 837 238 834 307 C833 380 779 421 704 423 C631 421 572 379 570 305 Z"/>
+<path class="line" d="M1006 304 C1004 225 1063 188 1140 190 C1216 190 1271 239 1270 305 C1269 378 1216 423 1141 424 C1068 422 1009 379 1006 304 Z"/>
+<text x="258" y="279" text-anchor="middle" class="state">SET</text><text x="258" y="316" text-anchor="middle" class="note">분 / 초 설정</text><text x="258" y="344" text-anchor="middle" class="note">선택 자리 깜빡임</text><text x="258" y="372" text-anchor="middle" class="note">문 열기 / 닫기</text>
+<text x="702" y="279" text-anchor="middle" class="state">RUN</text><text x="702" y="316" text-anchor="middle" class="note">1초씩 카운트다운</text><text x="702" y="344" text-anchor="middle" class="note">모터 회전</text><text x="702" y="372" text-anchor="middle" class="note">시간 / 원형 표시</text>
+<text x="1138" y="279" text-anchor="middle" class="state">FINISH</text><text x="1138" y="316" text-anchor="middle" class="note">모터 정지</text><text x="1138" y="344" text-anchor="middle" class="note">FND 3회 점멸</text><text x="1138" y="372" text-anchor="middle" class="note">부저 3회</text>
+<path class="arrow" d="M392 273 Q478 258 570 272"/><text x="480" y="208" text-anchor="middle" class="note">START</text><text x="480" y="234" text-anchor="middle" class="small">시간 &gt; 0, 문 닫힘</text>
+<path class="arrow" d="M834 279 Q925 262 1006 277"/><text x="921" y="226" text-anchor="middle" class="note">00.00 도달</text>
+<path class="arrow" d="M570 352 Q480 370 393 351"/><text x="480" y="405" text-anchor="middle" class="note">CANCEL</text><text x="480" y="429" text-anchor="middle" class="small">시간 초기화</text>
+<path class="arrow" d="M1140 424 C1134 566 974 591 710 590 C455 591 263 570 260 426"/><text x="704" y="565" text-anchor="middle" class="note">알림 3회 완료 또는 CANCEL</text>
+<path class="arrow" d="M258 119 Q259 151 258 185"/><text x="220" y="109" class="note">RESET</text>
+<text x="105" y="672" class="note">※ 문이 열려 있으면 START 불가</text><text x="105" y="708" class="note">※ RUN / FINISH 중에는 문 버튼 동작 안 함</text>
+<text x="105" y="748" class="small">현재 코드의 running, finished 신호를 바탕으로 정리한 동작 상태도</text>
+</svg>
