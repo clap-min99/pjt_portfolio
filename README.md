@@ -2,7 +2,7 @@
 
 ## 👋 박수민
 
-> **센서 입력부터 하드웨어 제어, 상위 서비스 연동까지 구현하는 임베디드 SW 개발자를 목표로 합니다.**
+> **센서 입력부터 하드웨어 제어, 상위 서비스 연동을 구현하는 임베디드 SW 개발자를 목표로 합니다.**
 
 📧 [jenny11994@naver.com](mailto:jenny11994@naver.com) &nbsp;·&nbsp; 🐙 [github.com/clap-min99](https://github.com/clap-min99)
 
@@ -19,11 +19,74 @@ SSAFY에서 웹·모바일·AI 서비스를 개발하고, **AI시스템반도체
 | **SSAFY (삼성 청년 SW 아카데미)** | 2024.07.02 ~ 2025.06.30 | 웹·모바일 서비스 팀 프로젝트, 프론트엔드 개발, 데이터 크롤링 및 AI 모델 개발 경험 |
 | **AI시스템반도체SW개발자 과정** | 2026.05.27 ~ 2026.12.16 (수료 예정) | AVR·STM32 레지스터 기반 펌웨어, 센서·모터 제어, Jetson AI 추론, Linux 디바이스 드라이버 팀 프로젝트 |
 
+<p>
+  <a href="https://solved.ac/qkrtnals032">
+    <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=qkrtnals032" />
+  </a>
+</p>
+
+### ✨Tech Stack✨
+🧩 Language
+<p>
+  <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=white"/>
+  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+</p>
+
+🎨 Frontend & App
+<p>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/React%20Native-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=redux&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Qt-41CD52?style=flat-square&logo=qt&logoColor=white"/>
+</p>
+
+🛠 Backend
+<p>
+  <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
+</p>
+
+🗄 Database
+<p>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/>
+</p>
+
+🤖 AI & Data
+<p>
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white"/>
+  <img src="https://img.shields.io/badge/XGBoost-EB5A46?style=flat-square"/>
+  <img src="https://img.shields.io/badge/LightGBM-9ACD32?style=flat-square"/>
+  <img src="https://img.shields.io/badge/YOLO-111F68?style=flat-square"/>
+  <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TensorRT-76B900?style=flat-square&logo=nvidia&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white"/>
+  <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Gemini-8E75B2?style=flat-square&logo=googlegemini&logoColor=white"/>
+</p>
+
+🔌 Embedded
+<p>
+  <img src="https://img.shields.io/badge/STM32-03234B?style=flat-square&logo=stmicroelectronics&logoColor=white"/>
+  <img src="https://img.shields.io/badge/ARM%20Cortex--M4-0091BD?style=flat-square&logo=arm&logoColor=white"/>
+  <img src="https://img.shields.io/badge/AVR%20ATmega128A-CC0000?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Jetson%20Orin%20Nano-76B900?style=flat-square&logo=nvidia&logoColor=white"/>
+</p>
+
+
 ### 강점
 
-- **하드웨어 제어와 동작 설계** — AVR·STM32 프로젝트에서 레지스터, 인터럽트, 타이머·PWM과 FSM을 활용해 센서 입력과 모터 동작을 구현했습니다.
-- **시스템을 연결하는 개발 경험** — Linux 드라이버와 사용자 프로그램, MCU와 Qt·모바일 관제를 연결하는 프로젝트를 진행했습니다. 웹·앱 개발 경험을 하드웨어 연동으로 확장하고 있습니다.
-- **AI 모델링과 팀 프로젝트 수행** — BoardGuard에서 팀장과 AI 모델링을 맡아 PatchCore 기반 PCB 이상탐지를 구현했고, SSAFY에서는 서비스 화면 개발과 초기 AI 모델 개발에 참여했습니다.
+- **하드웨어 제어와 동작 설계** — AVR·STM32 프로젝트에서 레지스터, 인터럽트, 타이머·PWM과 FSM을 활용해 센서 입력과 모터 동작을 구현
+- **시스템을 연결하는 개발 경험** — Linux 드라이버와 사용자 프로그램, MCU와 Qt·모바일 관제를 연결하는 프로젝트 진행. 웹·앱 개발 경험을 하드웨어 연동으로 확장중
+- **AI 모델링과 팀 프로젝트 수행** — BoardGuard에서 팀장과 AI 모델링을 맡아 PatchCore 기반 PCB 이상탐지를 구현, SSAFY에서는 서비스 화면 개발과 초기 AI 모델 개발에 참여
 
 ---
 
@@ -48,8 +111,8 @@ SSAFY에서 웹·모바일·AI 서비스를 개발하고, **AI시스템반도체
 
 | 플랫폼 | 프로젝트 | 한 줄 요약 | 인원 · 기간 | 핵심 기술 |
 |:---:|---|---|:---:|---|
-| **Basys3 (Artix-7 FPGA)** | [Stopwatch](./Stopwatch/README.md) | 시계·스톱워치 모드 전환 및 일시정지 후 FND 애니메이션 | — | Verilog RTL, FSM, Debounce, Tick, FND |
-| | [Microwave](./Microwave/README.md) | 로터리 시간 설정, 서보 도어 및 DC 모터 PWM 제어 | — | Verilog RTL, Debounce, FND, PWM |
+| **Basys3 (Artix-7 FPGA)** | [Stopwatch](./Stopwatch/README.md) | 시계·스톱워치 모드 전환 및 일시정지 후 FND 애니메이션 | 개인 · 2일 | Verilog RTL, FSM, Debounce, Tick, FND |
+| | [Microwave](./Microwave/README.md) | 로터리 시간 설정, 서보 도어 및 DC 모터 PWM 제어 | 개인 · 3일  | Verilog RTL, Debounce, FND, PWM |
 | **Jetson Orin Nano** | [BoardGuard](#-boardguard--pcb-불량-검사배출-시스템) | 컨베이어 위 PCB 양품/불량 판독 후 불량품 자동 배출 | 4인 (팀장) · 2주 | PatchCore, TensorRT, Flask, GPIO ↔ STM32 FSM |
 | | [SmartFan](#-smartfan--linux-디바이스-드라이버-기반-팬-제어) | 초음파 접근 감지·엔코더 입력으로 팬 자동/수동 제어 | 4인 · 3일 | Linux Driver, GPIO/IRQ, PWM, Character Device, FSM |
 | | [RPS_YOLO](#-rps_yolo--실시간-가위바위보-대전-게임) | 두 사람의 손을 인식해 가위바위보 승패 자동 판정 | 개인 · 1일 | YOLOv11n, TensorRT, PyCUDA Zero-Copy, OpenCV |
