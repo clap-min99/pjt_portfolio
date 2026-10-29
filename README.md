@@ -4,7 +4,15 @@
 
 > **센서 입력부터 하드웨어 제어, 상위 서비스 연동을 구현하는 임베디드 SW 개발자를 목표로 합니다.**
 
+<p>
+  <a href="https://solved.ac/qkrtnals032">
+    <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=qkrtnals032" />
+  </a>
+</p>
+
 📧 [jenny11994@naver.com](mailto:jenny11994@naver.com) &nbsp;·&nbsp; 🐙 [github.com/clap-min99](https://github.com/clap-min99)
+
+
 
 ### 소개
 
@@ -19,13 +27,13 @@ SSAFY에서 웹·모바일·AI 서비스를 개발하고, **AI시스템반도체
 | **SSAFY (삼성 청년 SW 아카데미)** | 2024.07.02 ~ 2025.06.30 | 웹·모바일 서비스 팀 프로젝트, 프론트엔드 개발, 데이터 크롤링 및 AI 모델 개발 경험 |
 | **AI시스템반도체SW개발자 과정** | 2026.05.27 ~ 2026.12.16 (수료 예정) | AVR·STM32 레지스터 기반 펌웨어, 센서·모터 제어, Jetson AI 추론, Linux 디바이스 드라이버 팀 프로젝트 |
 
-<p>
-  <a href="https://solved.ac/qkrtnals032">
-    <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=qkrtnals032" />
-  </a>
-</p>
+### 강점
 
-### ✨Tech Stack✨
+- **하드웨어 제어와 동작 설계** — AVR·STM32 프로젝트에서 레지스터, 인터럽트, 타이머·PWM과 FSM을 활용해 센서 입력과 모터 동작을 구현
+- **시스템을 연결하는 개발 경험** — Linux 드라이버와 사용자 프로그램, MCU와 Qt·모바일 관제를 연결하는 프로젝트 진행. 웹·앱 개발 경험을 하드웨어 연동으로 확장중
+- **AI 모델링과 팀 프로젝트 수행** — BoardGuard에서 팀장과 AI 모델링을 맡아 PatchCore 기반 PCB 이상탐지를 구현, SSAFY에서는 서비스 화면 개발과 초기 AI 모델 개발에 참여
+
+### Tech Stack
 🧩 Language
 <p>
   <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=white"/>
@@ -81,12 +89,6 @@ SSAFY에서 웹·모바일·AI 서비스를 개발하고, **AI시스템반도체
   <img src="https://img.shields.io/badge/Jetson%20Orin%20Nano-76B900?style=flat-square&logo=nvidia&logoColor=white"/>
 </p>
 
-
-### 강점
-
-- **하드웨어 제어와 동작 설계** — AVR·STM32 프로젝트에서 레지스터, 인터럽트, 타이머·PWM과 FSM을 활용해 센서 입력과 모터 동작을 구현
-- **시스템을 연결하는 개발 경험** — Linux 드라이버와 사용자 프로그램, MCU와 Qt·모바일 관제를 연결하는 프로젝트 진행. 웹·앱 개발 경험을 하드웨어 연동으로 확장중
-- **AI 모델링과 팀 프로젝트 수행** — BoardGuard에서 팀장과 AI 모델링을 맡아 PatchCore 기반 PCB 이상탐지를 구현, SSAFY에서는 서비스 화면 개발과 초기 AI 모델 개발에 참여
 
 ---
 
