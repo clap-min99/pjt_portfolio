@@ -259,6 +259,21 @@ Basys3 보드의 버튼과 4자리 7세그먼트로 시계와 10ms 단위 스톱
 
 `Basys3` `Artix-7` `Verilog` `Vivado 2020.2` `FSM` `Debounce` `7-Segment`
 
+### 🍽️ [Microwave](./Microwave/README.md) — FPGA 전자레인지 제어
+
+로터리 인코더 기반 조리 시간 설정 및 서보 도어·DC 모터·부저 제어를 구현한 Basys3 기반 Verilog RTL 프로젝트
+
+<img src="./Microwave/assets/microwave.gif" width="480" alt="Basys3 전자레인지 시간 설정, 서보 도어 및 모터 동작 시연" />
+
+[원본 영상 보기 (MP4, 약 17초 · 소리 포함)](./Microwave/assets/microwave.mp4)
+
+- **시간 설정·표시**: 로터리 회전으로 분·초 설정, 4자리 FND에 남은 시간과 조리 애니메이션 표시
+- **도어 제어**: SG90 서보로 열림·닫힘 제어, 도어 명령 상태에 따라 조리 시작 제한
+- **모터·종료 알림**: DC 모터 PWM 듀티 4단계 선택, 조리 완료 시 모터 정지와 부저·FND 알림
+- **검증**: XSim 테스트벤치 18개 항목 통과 및 실제 보드 동작 시연
+
+`Basys3` `Artix-7` `Verilog` `Vivado 2020.2` `Rotary Encoder` `PWM` `FND`
+
 ---
 
 ## 📎 Other Projects (Web · AI 서비스)
