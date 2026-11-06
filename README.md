@@ -115,6 +115,7 @@ SSAFY에서 웹·모바일·AI 서비스를 개발하고, **AI시스템반도체
 |:---:|---|---|:---:|---|
 | **Basys3 (Artix-7 FPGA)** | [Stopwatch](./Stopwatch/README.md) | 시계·스톱워치 모드 전환 및 일시정지 후 FND 애니메이션 | 개인 · 2일 | Verilog RTL, FSM, Debounce, Tick, FND |
 | | [Microwave](./Microwave/README.md) | 로터리 시간 설정, 서보 도어 및 DC 모터 PWM 제어 | 개인 · 3일  | Verilog RTL, Debounce, FND, PWM |
+| | [FPGA_I2C](./FPGA_I2C/README.md) | 두 FPGA 간 I2C 센서 자동 수신, FND·UART·OLED 표시 | 2인 · Master 담당 | Verilog RTL, I2C, FSM, BCD, XSim, SSD1306 |
 | **Jetson Orin Nano** | [BoardGuard](#-boardguard--pcb-불량-검사배출-시스템) | 컨베이어 위 PCB 양품/불량 판독 후 불량품 자동 배출 | 4인 (팀장) · 2주 | PatchCore, TensorRT, Flask, GPIO ↔ STM32 FSM |
 | | [SmartFan](#-smartfan--linux-디바이스-드라이버-기반-팬-제어) | 초음파 접근 감지·엔코더 입력으로 팬 자동/수동 제어 | 4인 · 3일 | Linux Driver, GPIO/IRQ, PWM, Character Device, FSM |
 | | [RPS_YOLO](#-rps_yolo--실시간-가위바위보-대전-게임) | 두 사람의 손을 인식해 가위바위보 승패 자동 판정 | 개인 · 1일 | YOLOv11n, TensorRT, PyCUDA Zero-Copy, OpenCV |
@@ -338,6 +339,21 @@ Basys3 보드의 버튼과 4자리 7세그먼트로 시계와 10ms 단위 스톱
 - **검증**: XSim 테스트벤치 18개 항목 통과 및 실제 보드 동작 시연
 
 `Basys3` `Artix-7` `Verilog` `Vivado 2020.2` `Rotary Encoder` `PWM` `FND`
+
+### 📡 [FPGA_I2C](./FPGA_I2C/README.md) — FPGA I2C 센서 모니터링
+
+> 👥 2인 팀 · **I2C Master 담당**
+
+Basys3 두 대를 I2C로 연결해 Slave의 온습도·거리를 Master의 FND·UART·OLED에 표시했습니다.
+
+<img src="./FPGA_I2C/assets/i2c%EC%84%BC%EC%84%9C_%EC%8B%9C%EC%97%B0%EC%98%81%EC%83%81.gif" width="480" alt="Basys3 I2C 센서 수신, FND 온습도·거리 모드와 OLED 동작 시연" />
+
+- **I2C Master FSM**: 매번 레지스터 포인터를 지정하고 repeated START로 8바이트 burst read, ACK/NACK·타임아웃 처리
+- **자동 수신·표시**: 기본 100ms 읽기, BTNU로 FND 온습도 ↔ 거리(cm) 전환, OLED 3줄·캐릭터 애니메이션과 UART 로그 출력
+- **데이터 일관성**: ID·센서별 유효 비트 검사, 마지막 정상값 유지, OLED 바이트 경계 중재와 UART 스냅샷으로 공유 버스·출력 충돌 방지
+- **타이밍·검증**: 16클럭 순차 BCD 변환, 시뮬레이션 5개 통과, 최종 WNS +0.069ns·WHS +0.122ns 및 DRC 위반 0건
+
+`Basys3` `Verilog` `SystemVerilog` `Vivado 2020.2` `I2C` `FSM` `SSD1306 OLED` `FND` `UART`
 
 ---
 

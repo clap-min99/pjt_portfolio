@@ -1,0 +1,14 @@
+# Generated Vivado and XSim outputs
+/vivado/
+/sim/build/
+/bitstream/
+.Xil/
+xsim.dir/
+*.jou
+*.log
+*.str
+*.pb
+*.backup.*
+
+# The OLED reference ROM is source data, not generated firmware HEX.
+!assets/slowpoke-frames.hex
